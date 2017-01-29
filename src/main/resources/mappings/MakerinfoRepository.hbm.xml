@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="my.project.autodealer.dao.MakerinfoRepository" table="makerinfo" schema="public" catalog="AutoDealer">
+        <id name="id">
+            <column name="id" sql-type="integer"/>
+        </id>
+        <many-to-one name="maker" column="maker_id"
+                     class="my.project.autodealer.dao.RefMakerRepository" not-null="true" cascade="all"/>
+        <many-to-one name="model" column="model_id"
+                     class="my.project.autodealer.dao.RefModelRepository" not-null="true" cascade="all"/>
+        <many-to-one name="carBody" column="car_body_id"
+                     class="my.project.autodealer.dao.RefCarbodyRepository" not-null="true" cascade="all"/>
+        <many-to-one name="transmission" column="transmission_id"
+                     class="my.project.autodealer.dao.RefTransmissionRepository" not-null="true" cascade="all"/>
+        <many-to-one name="fuelType" column="fuel_type_id"
+                     class="my.project.autodealer.dao.RefFueltypeRepository" not-null="true" cascade="all"/>
+        <property name="capacity">
+            <column name="capacity" sql-type="smallint"/>
+        </property>
+        <property name="year">
+            <column name="year" sql-type="smallint"/>
+        </property>
+    </class>
+</hibernate-mapping>

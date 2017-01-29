@@ -7,6 +7,13 @@ public class RefFueltypeRepository {
     private int id;
     private String fuelType;
 
+    public RefFueltypeRepository(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public RefFueltypeRepository() {
+    }
+
     public int getId() {
         return id;
     }

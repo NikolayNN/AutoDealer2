@@ -7,6 +7,13 @@ public class RefCarbodyRepository {
     private int id;
     private String carBody;
 
+    public RefCarbodyRepository(String carBody) {
+        this.carBody = carBody;
+    }
+
+    public RefCarbodyRepository() {
+    }
+
     public int getId() {
         return id;
     }

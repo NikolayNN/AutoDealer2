@@ -7,6 +7,13 @@ public class RefMakerRepository {
     private int id;
     private String manufactor;
 
+    public RefMakerRepository(String manufactor) {
+        this.manufactor = manufactor;
+    }
+
+    public RefMakerRepository() {
+    }
+
     public int getId() {
         return id;
     }

@@ -17,5 +17,6 @@
     <mapping resource="mappings/RefModelRepository.hbm.xml"/>
     <mapping resource="mappings/RefStatusRepository.hbm.xml"/>
     <mapping resource="mappings/RefTransmissionRepository.hbm.xml"/>
+    <mapping resource="mappings/MakerinfoRepository.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

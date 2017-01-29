@@ -7,6 +7,13 @@ public class RefStatusRepository {
     private int id;
     private String status;
 
+    public RefStatusRepository(String status) {
+        this.status = status;
+    }
+
+    public RefStatusRepository() {
+    }
+
     public int getId() {
         return id;
     }

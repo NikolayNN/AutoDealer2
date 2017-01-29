@@ -7,6 +7,13 @@ public class RefTransmissionRepository {
     private int id;
     private String transmission;
 
+    public RefTransmissionRepository(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public RefTransmissionRepository() {
+    }
+
     public int getId() {
         return id;
     }

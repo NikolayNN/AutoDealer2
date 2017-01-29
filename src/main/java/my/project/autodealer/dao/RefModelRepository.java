@@ -7,6 +7,13 @@ public class RefModelRepository {
     private int id;
     private String model;
 
+    public RefModelRepository(String model) {
+        this.model = model;
+    }
+
+    public RefModelRepository() {
+    }
+
     public int getId() {
         return id;
     }

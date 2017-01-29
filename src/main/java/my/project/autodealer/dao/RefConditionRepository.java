@@ -9,6 +9,13 @@ public class RefConditionRepository {
     private int id;
     private String condition;
 
+    public RefConditionRepository(String condition) {
+        this.condition = condition;
+    }
+
+    public RefConditionRepository() {
+    }
+
     public int getId() {
         return id;
     }
