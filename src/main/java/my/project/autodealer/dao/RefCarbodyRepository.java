@@ -12,6 +12,7 @@ public class RefCarbodyRepository {
     }
 
     public RefCarbodyRepository() {
+
     }
 
     public int getId() {
@@ -29,6 +30,8 @@ public class RefCarbodyRepository {
     public void setCarBody(String carBody) {
         this.carBody = carBody;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
