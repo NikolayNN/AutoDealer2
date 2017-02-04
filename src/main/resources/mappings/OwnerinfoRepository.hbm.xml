@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="my.project.autodealer.dao.OwnerinfoRepository" table="ownerinfo" schema="public" catalog="AutoDealer">
+        <id name="id">
+            <column name="id" sql-type="integer"/>
+        </id>
+        <property name="mileage">
+            <column name="mileage" sql-type="integer"/>
+        </property>
+        <property name="description">
+            <column name="description" sql-type="text"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="double precision" precision="-1"/>
+        </property>
+        <many-to-one name="condition" column="condition_id"
+                     class="my.project.autodealer.dao.RefMakerRepository" not-null="true" cascade="save-update"/>
+
+    </class>
+</hibernate-mapping>

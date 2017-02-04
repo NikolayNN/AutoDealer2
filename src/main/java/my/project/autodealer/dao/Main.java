@@ -8,27 +8,19 @@ import org.hibernate.Session;
 public class Main {
     public static void main(String[] args) {
 
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
-        RefMakerRepository refMaker = session.get(RefMakerRepository.class, 1);
-        RefModelRepository refModel = session.get(RefModelRepository.class, 1);
-        RefCarbodyRepository refCarbody = session.get(RefCarbodyRepository.class, 2);
-        RefTransmissionRepository refTransmission = session.get(RefTransmissionRepository.class, 1);
-        RefFueltypeRepository refFueltype = session.get(RefFueltypeRepository.class, 1);
+        MakerinfoRepository makerinfo = session.load(MakerinfoRepository.class, 1);
+        OwnerinfoRepository ownerInfo = session.load(OwnerinfoRepository.class, 1);
 
         session.beginTransaction();
 
+        CarRepository car = new CarRepository();
 
-        MakerinfoRepository makerInfo = new MakerinfoRepository();
-        makerInfo.setMaker(refMaker);
-        makerInfo.setModel(refModel);
-        makerInfo.setCarBody(refCarbody);
-        makerInfo.setTransmission(refTransmission);
-        makerInfo.setFuelType(refFueltype);
-        makerInfo.setCapacity((short) 77992);
-        makerInfo.setYear((short) 2200);
+        car.setMakerinfo(makerinfo);
+        car.setOwnerinfo(ownerInfo);
 
-        session.save(makerInfo);
+        session.save(car);
         session.getTransaction().commit();
 
         session.close();

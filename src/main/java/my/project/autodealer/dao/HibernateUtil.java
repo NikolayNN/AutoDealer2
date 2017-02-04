@@ -8,11 +8,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 /**
  * Created by Nikol on 1/5/2017.
  */
-public class HibernateSessionFactory {
+public class HibernateUtil {
 
-    private static SessionFactory sessionFactory = buildSessionFactory();
+    private static SessionFactory sessionFactory;
 
-    protected static SessionFactory buildSessionFactory() {
+    static  {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
@@ -26,7 +26,6 @@ public class HibernateSessionFactory {
 
             throw new ExceptionInInitializerError("Initial SessionFactory failed" + e);
         }
-        return sessionFactory;
     }
 
     public static SessionFactory getSessionFactory() {
