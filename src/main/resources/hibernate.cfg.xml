@@ -21,5 +21,6 @@
         <!--<mapping resource="mappings/CarRepository.hbm.xml"/>-->
         <mapping class="my.project.autodealer.dao.CarRepository" />
         <mapping resource="mappings/UsersRepository.hbm.xml"/>
+        <mapping class="my.project.autodealer.dao.AdvertRepository"/>
     </session-factory>
 </hibernate-configuration>
