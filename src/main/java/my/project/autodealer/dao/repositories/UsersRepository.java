@@ -1,4 +1,6 @@
-package my.project.autodealer.dao;
+package my.project.autodealer.dao.repositories;
+
+import my.project.autodealer.model.User;
 
 /**
  * Created by Nikol on 2/4/2017.
@@ -39,6 +41,12 @@ public class UsersRepository {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void createUser(User user){
+        name = user.getName();
+        password = user.getPassword();
+        email = user.getEmail();
     }
 
     @Override

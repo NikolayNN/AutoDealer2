@@ -1,4 +1,4 @@
-package my.project.autodealer.dao;
+package my.project.autodealer.dao.repositories;
 
 import javax.persistence.*;
 
