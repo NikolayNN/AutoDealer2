@@ -4,9 +4,10 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="my.project.autodealer.dao.UsersRepository" table="users" schema="public" catalog="AutoDealer">
+    <class name="my.project.autodealer.dao.repositories.UsersRepository" table="users" schema="public" catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
+            <generator class="increment"/>
         </id>
         <property name="name">
             <column name="name" sql-type="text"/>
