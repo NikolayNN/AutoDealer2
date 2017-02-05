@@ -9,6 +9,8 @@
         <property name="show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">root</property>
         <mapping resource="mappings/RefCarbodyRepository.hbm.xml"/>
         <mapping resource="mappings/RefConditionRepository.hbm.xml"/>
         <mapping resource="mappings/RefFueltypeRepository.hbm.xml"/>
@@ -19,8 +21,8 @@
         <mapping resource="mappings/MakerinfoRepository.hbm.xml"/>
         <mapping resource="mappings/OwnerinfoRepository.hbm.xml"/>
         <!--<mapping resource="mappings/CarRepository.hbm.xml"/>-->
-        <mapping class="my.project.autodealer.dao.CarRepository" />
+        <mapping class="my.project.autodealer.dao.repositories.CarRepository" />
         <mapping resource="mappings/UsersRepository.hbm.xml"/>
-        <mapping class="my.project.autodealer.dao.AdvertRepository"/>
+        <mapping class="my.project.autodealer.dao.repositories.AdvertRepository"/>
     </session-factory>
 </hibernate-configuration>
