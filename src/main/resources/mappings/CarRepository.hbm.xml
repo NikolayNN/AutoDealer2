@@ -4,14 +4,14 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="my.project.autodealer.dao.CarRepository" table="car" schema="public" catalog="AutoDealer">
+    <class name="my.project.autodealer.dao.repositories.CarRepository" table="car" schema="public" catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
             <generator class="increment" />
         </id>
-        <one-to-one name="makerinfo" class="my.project.autodealer.dao.MakerinfoRepository"
+        <one-to-one name="makerinfo" class="my.project.autodealer.dao.repositories.MakerinfoRepository"
                     cascade="all" ></one-to-one>
-        <one-to-one name="ownerinfo" class="my.project.autodealer.dao.OwnerinfoRepository"
+        <one-to-one name="ownerinfo" class="my.project.autodealer.dao.repositories.OwnerinfoRepository"
                    cascade="all"></one-to-one>
     </class>
 </hibernate-mapping>

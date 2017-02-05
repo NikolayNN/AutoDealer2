@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="my.project.autodealer.dao.RefTransmissionRepository" table="ref_transmission" schema="public"
+    <class name="my.project.autodealer.dao.repositories.RefTransmissionRepository" table="ref_transmission" schema="public"
            catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>

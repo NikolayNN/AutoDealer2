@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="my.project.autodealer.dao.OwnerinfoRepository" table="ownerinfo" schema="public" catalog="AutoDealer">
+    <class name="my.project.autodealer.dao.repositories.OwnerinfoRepository" table="ownerinfo" schema="public" catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
         </id>
@@ -18,7 +18,7 @@
             <column name="price" sql-type="double precision" precision="-1"/>
         </property>
         <many-to-one name="condition" column="condition_id"
-                     class="my.project.autodealer.dao.RefMakerRepository" not-null="true" cascade="save-update"/>
+                     class="my.project.autodealer.dao.repositories.RefMakerRepository" not-null="true" cascade="save-update"/>
 
     </class>
 </hibernate-mapping>
