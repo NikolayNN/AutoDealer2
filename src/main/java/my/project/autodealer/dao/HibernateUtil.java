@@ -12,7 +12,7 @@ public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
 
-    static  {
+    static {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
