@@ -8,4 +8,8 @@ import my.project.autodealer.model.User;
 public interface DatabaseManager {
 
     void addNewUser(User user);
+
+    User getUser(String name);
+
+    boolean isExistUser(String name, String password);
 }

@@ -17,4 +17,14 @@ public class ServiceImpl implements Service {
     public void addNewUser(User user) {
         databaseManager.addNewUser(user);
     }
+
+    @Override
+    public User receiveUser(String name) {
+        return databaseManager.getUser(name);
+    }
+
+    @Override
+    public boolean isExistUser(String name, String password) {
+        return databaseManager.isExistUser(name, password);
+    }
 }

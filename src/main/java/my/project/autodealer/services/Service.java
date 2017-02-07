@@ -8,4 +8,7 @@ import my.project.autodealer.model.User;
 public interface Service {
 
     void addNewUser(User user);
+    User receiveUser(String name);
+
+    boolean isExistUser(String name, String password);
 }

@@ -49,6 +49,10 @@ public class UsersRepository {
         email = user.getEmail();
     }
 
+    public User getUser(){
+        return new User(name, password, email);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

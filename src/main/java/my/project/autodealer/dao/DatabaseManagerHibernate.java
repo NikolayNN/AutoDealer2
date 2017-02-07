@@ -4,6 +4,7 @@ import my.project.autodealer.dao.repositories.UsersRepository;
 import my.project.autodealer.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 
 /**
  * Created by Nikol on 2/5/2017.
@@ -24,5 +25,31 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         session.beginTransaction();
         session.save(usersRepository);
         session.getTransaction().commit();
+    }
+
+    @Override
+    public User getUser(String name) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from UsersRepository where name =:name ");
+        query.setParameter("name", name);
+        UsersRepository usersRepository = (UsersRepository) query.uniqueResult();
+        if(usersRepository == null){
+            throw new IllegalArgumentException("user with name " + name + " doesn't found");
+        }
+        return usersRepository.getUser();
+    }
+
+    @Override
+    public boolean isExistUser(String name, String password) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from UsersRepository where name =:name and password =:password ");
+        query.setParameter("name", name);
+        query.setParameter("password", password);
+        UsersRepository usersRepository = (UsersRepository) query.uniqueResult();
+        if (usersRepository != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

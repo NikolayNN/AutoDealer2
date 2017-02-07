@@ -3,6 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <filter>
+        <filter-name>AuthorizationFilter</filter-name>
+        <filter-class>my.project.autodealer.controller.filters.AuthorizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthorizationFilter</filter-name> <!-- mandatory -->
+        <url-pattern>/secret/*</url-pattern>
+    </filter-mapping>
     <listener>
         <listener-class>my.project.autodealer.controller.listeners.ServletContextListenerImpl</listener-class>
     </listener>
@@ -14,5 +22,13 @@
     <servlet-mapping>
         <servlet-name>AddUser</servlet-name>
         <url-pattern>/addUser.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SignInServlet</servlet-name>
+        <servlet-class>my.project.autodealer.controller.servlets.SignInServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignInServlet</servlet-name>
+        <url-pattern>/signIn.do</url-pattern>
     </servlet-mapping>
 </web-app>
