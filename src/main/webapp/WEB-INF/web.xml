@@ -31,4 +31,12 @@
         <servlet-name>SignInServlet</servlet-name>
         <url-pattern>/signIn.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LogOutServlet</servlet-name>
+        <servlet-class>my.project.autodealer.controller.servlets.LogOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOutServlet</servlet-name>
+        <url-pattern>/logOut.do</url-pattern>
+    </servlet-mapping>
 </web-app>
