@@ -1,10 +1,13 @@
 package my.project.autodealer.dao;
 
+import my.project.autodealer.dao.repositories.RefMakerRepository;
 import my.project.autodealer.dao.repositories.UsersRepository;
 import my.project.autodealer.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+
+import java.util.List;
 
 /**
  * Created by Nikol on 2/5/2017.
@@ -52,4 +55,43 @@ public class DatabaseManagerHibernate implements DatabaseManager {
             return false;
         }
     }
+
+    @Override
+    public List getAutoMakers(){
+        return getList("from RefMakerRepository");
+    }
+
+    @Override
+    public List getAutoModels(){
+        return getList("from RefModelRepository");
+    }
+
+    @Override
+    public List getCarBody(){
+        return getList("from RefCarbodyRepository");
+    }
+
+    @Override
+    public List getTransmissions(){
+        return getList("from RefTransmissionRepository");
+    }
+
+    @Override
+    public List getConditions(){
+        return getList("from RefConditionRepository");
+    }
+
+    @Override
+    public List getFuelType(){
+        return getList("from RefFueltypeRepository");
+    }
+
+    private List getList(String hql){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery(hql);
+        List result = query.list();
+        session.close();
+        return result;
+    }
+
 }

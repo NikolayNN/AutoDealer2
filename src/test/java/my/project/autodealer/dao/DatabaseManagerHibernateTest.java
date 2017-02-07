@@ -77,4 +77,9 @@ public class DatabaseManagerHibernateTest {
         assertTrue(databaseManager.isExistUser(testUser.getName(), testUser.getPassword()));
     }
 
+    @Test
+    public void getAutoMakers(){
+        assertEquals(4, databaseManager.getAutoMakers().size());
+    }
+
 }

@@ -8,16 +8,18 @@ import my.project.autodealer.services.ServiceImpl;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
-import javax.servlet.http.HttpSessionBindingEvent;
 
 public class ServletContextListenerImpl implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         Service service = new ServiceImpl(new DatabaseManagerHibernate());
         servletContextEvent.getServletContext().setAttribute("service", service);
+        servletContextEvent.getServletContext().setAttribute("makers", service.getAutoMakers());
+        servletContextEvent.getServletContext().setAttribute("models", service.getAutoModels());
+        servletContextEvent.getServletContext().setAttribute("bodies", service.getCarBodies());
+        servletContextEvent.getServletContext().setAttribute("transmissions", service.getTransmissions());
+        servletContextEvent.getServletContext().setAttribute("fuelTypes", service.getFuelTypes());
+        servletContextEvent.getServletContext().setAttribute("conditions", service.getConditions());
     }
 
     @Override

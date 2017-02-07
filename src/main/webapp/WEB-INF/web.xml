@@ -39,4 +39,13 @@
         <servlet-name>LogOutServlet</servlet-name>
         <url-pattern>/logOut.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AddNewAdvertServlet</servlet-name>
+        <servlet-class>my.project.autodealer.controller.servlets.AddNewAdvertServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddNewAdvertServlet</servlet-name>
+        <url-pattern>/addAdvert.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>
