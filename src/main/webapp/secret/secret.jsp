@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>secret page</h3>
+    <p>Hello ${sessionScope.user.name}!</p>
     <form action="/logOut.do" method="get">
         <input type="submit" value="Log out">
     </form>

@@ -21,7 +21,7 @@ public class SignInServlet extends HttpServlet {
             User user = service.receiveUser(login);
             if (checkUserPassword(user, password)) {
                 request.getSession().setAttribute("user", user);
-                response.sendRedirect("secret/secret.html");
+                response.sendRedirect("secret/secret.jsp");
             } else {
                 request.setAttribute("message", "check login or password");
                 request.getRequestDispatcher("error.jsp").forward(request, response);
