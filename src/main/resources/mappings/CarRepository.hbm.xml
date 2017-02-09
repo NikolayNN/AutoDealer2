@@ -9,9 +9,9 @@
             <column name="id" sql-type="integer"/>
             <generator class="increment" />
         </id>
-        <one-to-one name="makerinfo" class="my.project.autodealer.dao.repositories.MakerinfoRepository"
+        <one-to-one name="makerinfo" class="my.project.autodealer.dao.repositories.MakerInfoRepository"
                     cascade="all" ></one-to-one>
-        <one-to-one name="ownerinfo" class="my.project.autodealer.dao.repositories.OwnerinfoRepository"
+        <one-to-one name="ownerinfo" class="my.project.autodealer.dao.repositories.OwnerInfoRepository"
                    cascade="all"></one-to-one>
     </class>
 </hibernate-mapping>

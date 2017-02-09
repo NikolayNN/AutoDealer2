@@ -3,7 +3,7 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class MakerinfoRepository {
+public class MakerInfoRepository {
     private int id;
     private RefMakerRepository maker;
     private RefModelRepository model;
@@ -15,6 +15,19 @@ public class MakerinfoRepository {
 
     public int getId() {
         return id;
+    }
+
+    public MakerInfoRepository() {
+    }
+
+    public MakerInfoRepository(RefMakerRepository maker, RefModelRepository model, RefCarbodyRepository carBody, RefTransmissionRepository transmission, RefFueltypeRepository fuelType, short capacity, short year) {
+        this.maker = maker;
+        this.model = model;
+        this.carBody = carBody;
+        this.transmission = transmission;
+        this.fuelType = fuelType;
+        this.capacity = capacity;
+        this.year = year;
     }
 
     public void setId(int id) {

@@ -15,25 +15,33 @@ public class CarRepository {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="owner_info_id")
-    OwnerinfoRepository ownerinfo;
+    OwnerInfoRepository ownerinfo;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="maker_info_id")
-    MakerinfoRepository makerinfo;
+    MakerInfoRepository makerinfo;
 
-    public OwnerinfoRepository getOwnerinfo() {
+    public CarRepository() {
+    }
+
+    public CarRepository(MakerInfoRepository makerInfoRepository, OwnerInfoRepository ownerInfoRepository) {
+        this.makerinfo = makerInfoRepository;
+        this.ownerinfo = ownerInfoRepository;
+    }
+
+    public OwnerInfoRepository getOwnerinfo() {
         return ownerinfo;
     }
 
-    public void setOwnerinfo(OwnerinfoRepository ownerinfo) {
+    public void setOwnerinfo(OwnerInfoRepository ownerinfo) {
         this.ownerinfo = ownerinfo;
     }
 
-    public MakerinfoRepository getMakerinfo() {
+    public MakerInfoRepository getMakerinfo() {
         return makerinfo;
     }
 
-    public void setMakerinfo(MakerinfoRepository makerinfo) {
+    public void setMakerinfo(MakerInfoRepository makerinfo) {
         this.makerinfo = makerinfo;
     }
 

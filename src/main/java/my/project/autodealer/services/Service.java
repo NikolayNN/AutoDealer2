@@ -1,5 +1,6 @@
 package my.project.autodealer.services;
 
+import my.project.autodealer.model.Advert;
 import my.project.autodealer.model.User;
 
 import java.util.List;
@@ -25,4 +26,6 @@ public interface Service {
     List<String> getFuelTypes();
 
     List<String> getConditions();
+
+    void saveAdvert(Advert advert);
 }

@@ -1,5 +1,7 @@
 package my.project.autodealer.dao;
 
+import my.project.autodealer.model.Advert;
+import my.project.autodealer.model.Car;
 import my.project.autodealer.model.User;
 
 import java.util.List;
@@ -26,4 +28,10 @@ public interface DatabaseManager {
     List getConditions();
 
     List getFuelType();
+
+    void saveAdvert(Advert advert);
+
+    void saveCar(Car car);
+
+    Object getUniqueValue(String hql);
 }

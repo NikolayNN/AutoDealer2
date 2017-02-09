@@ -2,6 +2,7 @@ package my.project.autodealer.services;
 
 import my.project.autodealer.dao.DatabaseManager;
 import my.project.autodealer.dao.repositories.*;
+import my.project.autodealer.model.Advert;
 import my.project.autodealer.model.User;
 
 import java.util.ArrayList;
@@ -103,6 +104,11 @@ public class ServiceImpl implements Service {
             result.add(condition.getCondition());
         }
         return result;
+    }
+
+    @Override
+    public void saveAdvert(Advert advert) {
+        //todo
     }
 
 }

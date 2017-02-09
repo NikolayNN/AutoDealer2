@@ -1,6 +1,9 @@
 package my.project.autodealer.dao;
 
 import my.project.autodealer.dao.repositories.UsersRepository;
+import my.project.autodealer.model.Car;
+import my.project.autodealer.model.MakerInfo;
+import my.project.autodealer.model.OwnerInfo;
 import my.project.autodealer.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -80,6 +83,26 @@ public class DatabaseManagerHibernateTest {
     @Test
     public void getAutoMakers(){
         assertEquals(4, databaseManager.getAutoMakers().size());
+    }
+
+    @Test
+    public void saveCar(){
+        MakerInfo makerInfo = new MakerInfo(
+                "honda",
+                "civic",
+                "sedan",
+                "manual",
+                "gasoline",
+                2500,
+                2007);
+        OwnerInfo ownerInfo = new OwnerInfo(
+                200000,
+                "new",
+                "testDescription",
+                12000);
+
+        Car car = new Car(makerInfo, ownerInfo);
+        databaseManager.saveCar(car);
     }
 
 }
