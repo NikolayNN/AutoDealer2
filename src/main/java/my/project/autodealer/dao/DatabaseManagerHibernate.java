@@ -94,16 +94,8 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     public void saveCar(Car car) {
         MakerInfoRepository makerInfoRepository = createMakerInfoRepository(car.getMakerInfo());
         OwnerInfoRepository ownerInfoRepository = createOwnerInfoRepository(car.getOwnerInfo());
-        Session session = sessionFactory.openSession();
         CarRepository carRepository = new CarRepository(makerInfoRepository, ownerInfoRepository);
         saveCarRepository(carRepository);
-    }
-
-    private CarRepository createCarRepository(MakerInfoRepository makerInfoRepository, OwnerInfoRepository ownerInfoRepository) {
-        return new CarRepository(
-                makerInfoRepository,
-                ownerInfoRepository
-        );
     }
 
     private void saveCarRepository(CarRepository carRepository) {
@@ -112,26 +104,6 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         session.save(carRepository);
         session.getTransaction().commit();
         session.close();
-    }
-
-    private int saveOwnerInfoRepository(OwnerInfoRepository ownerInfoRepository) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(ownerInfoRepository);
-        int id = ownerInfoRepository.getId();
-        session.getTransaction().commit();
-        session.close();
-        return id;
-    }
-
-    private int saveMakerInfoRepository(MakerInfoRepository makerInfoRepository) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(makerInfoRepository);
-        int id = makerInfoRepository.getId();
-        session.getTransaction().commit();
-        session.close();
-        return id;
     }
 
     private MakerInfoRepository createMakerInfoRepository(MakerInfo makerInfo) {
