@@ -152,7 +152,6 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         return (RefConditionRepository) getUniqueValue(String.format("from RefConditionRepository where condition='%s'", condition));
     }
 
-    @Override
     public Object getUniqueValue(String hql) {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery(hql);

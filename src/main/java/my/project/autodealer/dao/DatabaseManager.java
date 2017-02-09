@@ -33,5 +33,4 @@ public interface DatabaseManager {
 
     void saveCar(Car car);
 
-    Object getUniqueValue(String hql);
 }
