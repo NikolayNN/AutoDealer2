@@ -16,8 +16,7 @@ import java.util.Date;
 public class AddNewAdvertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Service service = (Service) request.getServletContext().getAttribute("service");
-        Advert advert = createAdvert(request);
-        service.saveAdvert(advert);
+        service.saveAdvert(createAdvert(request));
     }
 
     private Advert createAdvert(HttpServletRequest request){
