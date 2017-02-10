@@ -1,16 +1,15 @@
 package my.project.autodealer.dao;
 
 import my.project.autodealer.dao.repositories.UsersRepository;
-import my.project.autodealer.model.Car;
-import my.project.autodealer.model.MakerInfo;
-import my.project.autodealer.model.OwnerInfo;
-import my.project.autodealer.model.User;
+import my.project.autodealer.model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -30,32 +29,32 @@ public class DatabaseManagerHibernateTest {
     @Before
     public void setup() {
         testUser = new User("testName", "testPassword", "test234@mail.ru");
-        addTestRecordToDatabase();
+//        addTestRecordToDatabase();
         databaseManager = new DatabaseManagerHibernate();
     }
+//
+//    private void addTestRecordToDatabase() {
+//        Session session = sessionFactory.openSession();
+//        UsersRepository usersRepository = new UsersRepository();
+//        usersRepository.createUser(testUser);
+//        session.beginTransaction();
+//        session.save(usersRepository);
+//        session.getTransaction().commit();
+//        session.close();
+//    }
 
-    private void addTestRecordToDatabase() {
-        Session session = sessionFactory.openSession();
-        UsersRepository usersRepository = new UsersRepository();
-        usersRepository.createUser(testUser);
-        session.beginTransaction();
-        session.save(usersRepository);
-        session.getTransaction().commit();
-        session.close();
-    }
 
-
-    @After
-    public void destroy() {
-        Session session = sessionFactory.openSession();
-        Query query = session.createQuery("from UsersRepository where name =:name ");
-        query.setParameter("name", testUser.getName());
-        UsersRepository usersRepository = (UsersRepository) query.uniqueResult();
-        session.beginTransaction();
-        session.delete(usersRepository);
-        session.getTransaction().commit();
-        session.close();
-    }
+//    @After
+//    public void destroy() {
+//        Session session = sessionFactory.openSession();
+//        Query query = session.createQuery("from UsersRepository where name =:name ");
+//        query.setParameter("name", testUser.getName());
+//        UsersRepository usersRepository = (UsersRepository) query.uniqueResult();
+//        session.beginTransaction();
+//        session.delete(usersRepository);
+//        session.getTransaction().commit();
+//        session.close();
+//    }
 
     @Test
     public void addNewUser() throws Exception {
@@ -86,7 +85,7 @@ public class DatabaseManagerHibernateTest {
     }
 
     @Test
-    public void saveCar(){
+    public void saveAdvert(){
         MakerInfo makerInfo = new MakerInfo(
                 "honda",
                 "civic",
@@ -102,7 +101,8 @@ public class DatabaseManagerHibernateTest {
                 12000);
 
         Car car = new Car(makerInfo, ownerInfo);
-        databaseManager.saveCar(car);
+        Advert advert = new Advert(car, new Date().getTime()/1000, testUser, "new");
+        databaseManager.saveAdvert(advert);
     }
 
 }

@@ -61,7 +61,7 @@
                     <tr>
                         <td>transmission</td>
                         <td>
-                            <select name="transmisson">
+                            <select name="transmission">
                                 <c:forEach items="${applicationScope.transmissions}" var="transmission">
                                     <option>${transmission}</option>
                                 </c:forEach>

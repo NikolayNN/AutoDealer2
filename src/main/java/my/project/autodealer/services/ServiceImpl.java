@@ -108,7 +108,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public void saveAdvert(Advert advert) {
-        //todo
+        databaseManager.saveAdvert(advert);
     }
 
 }

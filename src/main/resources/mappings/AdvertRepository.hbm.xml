@@ -1,16 +1,27 @@
-<class name="my.project.autodealer.dao.repositories.AdvertRepository" table="advert" schema="public" catalog="AutoDealer">
-    <id name="id">
-        <column name="id" sql-type="integer"/>
-    </id>
-    <many-to-one name="car" column="car_id"
-                 class="my.project.autodealer.dao.repositories.CarRepository" not-null="true" cascade="save-update"/>
-    <property name="createdDate">
-        <column name="created_date" sql-type="integer"/>
-    </property>
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="my.project.autodealer.dao.repositories.AdvertRepository" table="advert" schema="public"
+           catalog="AutoDealer">
+        <id name="id">
+            <column name="id" sql-type="integer"/>
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="car" column="car_id"
+                     class="my.project.autodealer.dao.repositories.CarRepository" not-null="true"
+                     cascade="save-update"/>
+        <property name="createdDate">
+            <column name="created_date" sql-type="integer"/>
+        </property>
 
-    <many-to-one name="users" column="users_id"
-                 class="my.project.autodealer.dao.repositories.UsersRepository" not-null="true" cascade="save-update"/>
+        <many-to-one name="users" column="users_id"
+                     class="my.project.autodealer.dao.repositories.UsersRepository" not-null="true"
+                     cascade="save-update"/>
 
-    <many-to-one name="status" column="status_id"
-                 class="my.project.autodealer.dao.repositories.RefStatusRepository" not-null="true" cascade="save-update"/>
-</class>
+        <many-to-one name="status" column="status_id"
+                     class="my.project.autodealer.dao.repositories.RefStatusRepository" not-null="true"
+                     cascade="save-update"/>
+    </class>
+</hibernate-mapping>

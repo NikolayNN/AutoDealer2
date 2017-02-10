@@ -1,5 +1,6 @@
 package my.project.autodealer.dao;
 
+import my.project.autodealer.dao.repositories.CarRepository;
 import my.project.autodealer.model.Advert;
 import my.project.autodealer.model.Car;
 import my.project.autodealer.model.User;
@@ -31,6 +32,5 @@ public interface DatabaseManager {
 
     void saveAdvert(Advert advert);
 
-    void saveCar(Car car);
-
+    void saveCarRepository(CarRepository carRepository);
 }

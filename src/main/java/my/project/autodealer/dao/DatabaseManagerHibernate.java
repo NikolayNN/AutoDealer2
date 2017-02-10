@@ -87,18 +87,31 @@ public class DatabaseManagerHibernate implements DatabaseManager {
 
     @Override
     public void saveAdvert(Advert advert) {
-
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        AdvertRepository advertRepository = createAdvertRepository(advert);
+        session.save(advertRepository);
+        session.getTransaction().commit();
+        session.close();
     }
 
-    @Override//todo delete this method from interface
-    public void saveCar(Car car) {
+    private AdvertRepository createAdvertRepository(Advert advert){
+        return new AdvertRepository(
+                createCarRepository(advert.getCar()),
+                loadUserRepository(advert.getUser().getName()),
+                loadRefStatusRepository(advert.getStatus()),
+                advert.getCreatedDate()
+        );
+    }
+
+    private CarRepository createCarRepository(Car car) {
         MakerInfoRepository makerInfoRepository = createMakerInfoRepository(car.getMakerInfo());
         OwnerInfoRepository ownerInfoRepository = createOwnerInfoRepository(car.getOwnerInfo());
         CarRepository carRepository = new CarRepository(makerInfoRepository, ownerInfoRepository);
-        saveCarRepository(carRepository);
+        return carRepository;
     }
-
-    private void saveCarRepository(CarRepository carRepository) {
+    @Override
+    public void saveCarRepository(CarRepository carRepository) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(carRepository);
@@ -150,6 +163,14 @@ public class DatabaseManagerHibernate implements DatabaseManager {
 
     private RefConditionRepository loadRefConditionRepository(String condition) {
         return (RefConditionRepository) getUniqueValue(String.format("from RefConditionRepository where condition='%s'", condition));
+    }
+
+    private RefStatusRepository loadRefStatusRepository(String status) {
+        return (RefStatusRepository) getUniqueValue(String.format("from RefStatusRepository where status='%s'", status));
+    }
+
+    private UsersRepository loadUserRepository(String name){
+        return (UsersRepository) getUniqueValue(String.format("from UsersRepository where name='%s'", name));
     }
 
     public Object getUniqueValue(String hql) {

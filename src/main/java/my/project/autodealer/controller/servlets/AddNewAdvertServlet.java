@@ -16,13 +16,14 @@ import java.util.Date;
 public class AddNewAdvertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Service service = (Service) request.getServletContext().getAttribute("service");
-        service.saveAdvert(createAdvert(request));
+        Advert advert = createAdvert(request);
+        service.saveAdvert(advert);
     }
 
     private Advert createAdvert(HttpServletRequest request){
         return new Advert(
                 createCar(request),
-                new Date().getTime(),
+                new Date().getTime()/1000,
                 getSessionUser(request),
                 request.getParameter("status"));
     }

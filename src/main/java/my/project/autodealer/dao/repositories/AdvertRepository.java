@@ -5,10 +5,20 @@ package my.project.autodealer.dao.repositories;
  */
 public class AdvertRepository {
     private int id;
-    private int createdDate;
     private CarRepository car;
     private UsersRepository users;
     private RefStatusRepository status;
+    private long createdDate;
+
+    public AdvertRepository(CarRepository car, UsersRepository users, RefStatusRepository status, long createdDate) {
+        this.car = car;
+        this.users = users;
+        this.status = status;
+        this.createdDate = createdDate;
+    }
+
+    public AdvertRepository() {
+    }
 
     public int getId() {
         return id;
@@ -18,11 +28,11 @@ public class AdvertRepository {
         this.id = id;
     }
 
-    public int getCreatedDate() {
+    public long getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(int createdDate) {
+    public void setCreatedDate(long createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -65,8 +75,8 @@ public class AdvertRepository {
 
     @Override
     public int hashCode() {
-        int result = id;
+        long result = id;
         result = 31 * result + createdDate;
-        return result;
+        return (int) result;
     }
 }
