@@ -110,14 +110,6 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         CarRepository carRepository = new CarRepository(makerInfoRepository, ownerInfoRepository);
         return carRepository;
     }
-    @Override
-    public void saveCarRepository(CarRepository carRepository) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(carRepository);
-        session.getTransaction().commit();
-        session.close();
-    }
 
     private MakerInfoRepository createMakerInfoRepository(MakerInfo makerInfo) {
         return new MakerInfoRepository(

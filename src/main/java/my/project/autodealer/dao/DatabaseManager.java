@@ -31,6 +31,4 @@ public interface DatabaseManager {
     List getFuelType();
 
     void saveAdvert(Advert advert);
-
-    void saveCarRepository(CarRepository carRepository);
 }
