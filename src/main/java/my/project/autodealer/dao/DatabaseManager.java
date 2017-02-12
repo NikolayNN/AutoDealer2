@@ -30,5 +30,7 @@ public interface DatabaseManager {
 
     List getFuelType();
 
+    List getAdverts();
+
     void saveAdvert(Advert advert);
 }

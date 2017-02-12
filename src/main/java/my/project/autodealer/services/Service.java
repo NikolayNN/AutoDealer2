@@ -1,5 +1,6 @@
 package my.project.autodealer.services;
 
+import my.project.autodealer.dao.repositories.AdvertRepository;
 import my.project.autodealer.model.Advert;
 import my.project.autodealer.model.User;
 
@@ -28,4 +29,6 @@ public interface Service {
     List<String> getConditions();
 
     void saveAdvert(Advert advert);
+
+    List getAdverts();
 }

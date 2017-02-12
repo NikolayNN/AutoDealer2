@@ -86,6 +86,11 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     }
 
     @Override
+    public List getAdverts(){
+        return  getList("from AdvertRepository");
+    }
+
+    @Override
     public void saveAdvert(Advert advert) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -180,5 +185,4 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         session.close();
         return result;
     }
-
 }

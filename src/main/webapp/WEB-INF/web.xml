@@ -47,5 +47,14 @@
         <servlet-name>AddNewAdvertServlet</servlet-name>
         <url-pattern>/addAdvert.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ShowAdvertServlet</servlet-name>
+        <servlet-class>my.project.autodealer.controller.servlets.ShowAdvertServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowAdvertServlet</servlet-name>
+        <url-pattern>/showAdverts.do</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

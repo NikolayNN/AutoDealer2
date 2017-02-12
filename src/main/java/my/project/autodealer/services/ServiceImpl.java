@@ -111,4 +111,11 @@ public class ServiceImpl implements Service {
         databaseManager.saveAdvert(advert);
     }
 
+    @Override
+    public List getAdverts() {
+        return databaseManager.getAdverts();
+    }
+
+
+
 }
