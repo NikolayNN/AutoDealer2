@@ -8,16 +8,16 @@ public class OwnerInfoRepository {
     private int mileage;
     private String description;
     private double price;
-    private RefConditionRepository condition;
+    private RefConditionRepository refCondition;
 
     public OwnerInfoRepository() {
     }
 
-    public OwnerInfoRepository(int mileage, String description, double price, RefConditionRepository condition) {
+    public OwnerInfoRepository(int mileage, String description, double price, RefConditionRepository refCondition) {
         this.mileage = mileage;
         this.description = description;
         this.price = price;
-        this.condition = condition;
+        this.refCondition = refCondition;
     }
 
     public int getId() {
@@ -52,12 +52,12 @@ public class OwnerInfoRepository {
         this.price = price;
     }
 
-    public RefConditionRepository getCondition() {
-        return condition;
+    public RefConditionRepository getRefCondition() {
+        return refCondition;
     }
 
-    public void setCondition(RefConditionRepository condition) {
-        this.condition = condition;
+    public void setRefCondition(RefConditionRepository condition) {
+        this.refCondition = condition;
     }
 
     @Override

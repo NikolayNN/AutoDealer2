@@ -44,66 +44,67 @@
                             Maker
                         </td>
                         <td>
-                            <p>${advert.car.makerinfo.maker.maker}</p>
+                            <p>${advert.car.makerInfo.refMaker.maker}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>model</td>
                         <td>
-                            <p></p>
+                            <p>${advert.car.makerInfo.refModel.model}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>car body</td>
                         <td>
-                            <p></p>
+                            <p>${advert.car.makerInfo.refCarBody.carBody}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>transmission</td>
                         <td>
-                            <p></p>
+                            <p>${advert.car.makerInfo.refTransmission.transmission}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>fuel type</td>
                         <td>
-                            <p></p>
+                            <p>${advert.car.makerInfo.refFuelType.fuelType}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>condition</td>
                         <td>
-                            <p></p>
+                            <p>${advert.car.ownerInfo.refCondition.condition}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>cubic capacity</td>
                         <td>
-                            <p></p>
+                            <p>${advert.car.makerInfo.capacity}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>year</td>
-                        <td><p></p></td>
+                        <td><p>${advert.car.makerInfo.year}</p></td>
                     </tr>
                     <tr>
                         <td>mileage</td>
-                        <td><p></p></td>
+                        <td><p>${advert.car.ownerInfo.mileage}</p></td>
                     </tr>
                     <tr>
                         <td>price</td>
-                        <td><p></p></td>
+                        <td><p>${advert.car.ownerInfo.price}</p></td>
                     </tr>
                     <tr>
                         <td>description</td>
-                        <td><p></p></td>
+                        <td><p>${advert.car.ownerInfo.description}</p></td>
                     </tr>
                     <tr>
-                        <td>status</td>
-                        <td><p></p></td>
+                        <td>added</td>
+                        <td><p>${advert.users.name}</p></td>
                     </tr>
                 </table>
+                <hr/>
             </c:forEach>
         </div>
     </div>
