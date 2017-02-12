@@ -5,10 +5,10 @@ package my.project.autodealer.dao.repositories;
  */
 public class RefMakerRepository {
     private int id;
-    private String manufactor;
+    private String maker;
 
-    public RefMakerRepository(String manufactor) {
-        this.manufactor = manufactor;
+    public RefMakerRepository(String maker) {
+        this.maker = maker;
     }
 
     public RefMakerRepository() {
@@ -23,12 +23,12 @@ public class RefMakerRepository {
         this.id = id;
     }
 
-    public String getManufactor() {
-        return manufactor;
+    public String getMaker() {
+        return maker;
     }
 
-    public void setManufactor(String manufactor) {
-        this.manufactor = manufactor;
+    public void setMaker(String maker) {
+        this.maker = maker;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class RefMakerRepository {
         RefMakerRepository that = (RefMakerRepository) o;
 
         if (id != that.id) return false;
-        if (manufactor != null ? !manufactor.equals(that.manufactor) : that.manufactor != null) return false;
+        if (maker != null ? !maker.equals(that.maker) : that.maker != null) return false;
 
         return true;
     }
@@ -47,7 +47,7 @@ public class RefMakerRepository {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (manufactor != null ? manufactor.hashCode() : 0);
+        result = 31 * result + (maker != null ? maker.hashCode() : 0);
         return result;
     }
 }

@@ -41,7 +41,7 @@ public class ServiceImpl implements Service {
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefMakerRepository refMaker = (RefMakerRepository) iter.next();
-            result.add(refMaker.getManufactor());
+            result.add(refMaker.getMaker());
         }
         return result;
     }

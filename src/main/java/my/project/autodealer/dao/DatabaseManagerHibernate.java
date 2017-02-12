@@ -139,7 +139,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
 
 
     private RefMakerRepository loadRefMakerRepository(String maker) {
-        return (RefMakerRepository) getUniqueValue(String.format("from RefMakerRepository where manufactor='%s'", maker));
+        return (RefMakerRepository) getUniqueValue(String.format("from RefMakerRepository where maker='%s'", maker));
     }
 
     private RefModelRepository loadRefModelRepository(String model) {

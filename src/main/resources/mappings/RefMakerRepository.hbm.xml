@@ -9,8 +9,8 @@
             <column name="id" sql-type="integer"/>
             <generator class="increment"/>
         </id>
-        <property name="manufactor">
-            <column name="manufactor" sql-type="text"/>
+        <property name="maker">
+            <column name="maker" sql-type="text"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -44,7 +44,7 @@
                             Maker
                         </td>
                         <td>
-                            <p>${advert.car.makerinfo.maker.manufactor}</p>
+                            <p>${advert.car.makerinfo.maker.maker}</p>
                         </td>
                     </tr>
                     <tr>
