@@ -10,8 +10,8 @@
             <generator class="increment" />
         </id>
         <one-to-one name="makerinfo" class="my.project.autodealer.dao.repositories.MakerInfoRepository"
-                    cascade="all" ></one-to-one>
+                    cascade="all" lazy="false" fetch="select"></one-to-one>
         <one-to-one name="ownerinfo" class="my.project.autodealer.dao.repositories.OwnerInfoRepository"
-                   cascade="all"></one-to-one>
+                   cascade="all" lazy="false" fetch="select"></one-to-one>
     </class>
 </hibernate-mapping>

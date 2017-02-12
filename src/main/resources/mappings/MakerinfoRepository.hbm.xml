@@ -10,15 +10,15 @@
             <generator class="increment"/>
         </id>
         <many-to-one name="maker" column="maker_id"
-                     class="my.project.autodealer.dao.repositories.RefMakerRepository" not-null="true" cascade="save-update"/>
+                     class="my.project.autodealer.dao.repositories.RefMakerRepository" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="model" column="model_id"
-                     class="my.project.autodealer.dao.repositories.RefModelRepository" not-null="true" cascade="save-update"/>
+                     class="my.project.autodealer.dao.repositories.RefModelRepository" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="carBody" column="car_body_id"
-                     class="my.project.autodealer.dao.repositories.RefCarbodyRepository" not-null="true" cascade="save-update"/>
+                     class="my.project.autodealer.dao.repositories.RefCarbodyRepository" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="transmission" column="transmission_id"
-                     class="my.project.autodealer.dao.repositories.RefTransmissionRepository" not-null="true" cascade="save-update"/>
+                     class="my.project.autodealer.dao.repositories.RefTransmissionRepository" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="fuelType" column="fuel_type_id"
-                     class="my.project.autodealer.dao.repositories.RefFueltypeRepository" not-null="true" cascade="save-update"/>
+                     class="my.project.autodealer.dao.repositories.RefFueltypeRepository" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <property name="capacity">
             <column name="capacity" sql-type="smallint"/>
         </property>

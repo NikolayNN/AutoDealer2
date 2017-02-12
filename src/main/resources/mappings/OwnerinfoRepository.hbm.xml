@@ -19,7 +19,6 @@
             <column name="price" sql-type="double precision" precision="-1"/>
         </property>
         <many-to-one name="condition" column="condition_id"
-                     class="my.project.autodealer.dao.repositories.RefConditionRepository" not-null="true" cascade="save-update"/>
-
+                     class="my.project.autodealer.dao.repositories.RefConditionRepository" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
     </class>
 </hibernate-mapping>
