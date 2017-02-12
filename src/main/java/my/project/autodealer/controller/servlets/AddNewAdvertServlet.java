@@ -15,27 +15,33 @@ import java.util.Date;
  */
 public class AddNewAdvertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Service service = (Service) request.getServletContext().getAttribute("service");
-        service.saveAdvert(createAdvert(request));
+        try {
+            Service service = (Service) request.getServletContext().getAttribute("service");
+            service.saveAdvert(createAdvert(request));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            request.setAttribute("message", ex.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
     }
 
-    private Advert createAdvert(HttpServletRequest request){
+    private Advert createAdvert(HttpServletRequest request) {
         return new Advert(
                 createCar(request),
-                new Date().getTime()/1000,
+                new Date().getTime() / 1000,
                 getSessionUser(request),
                 request.getParameter("status"));
     }
 
-    private Car createCar(HttpServletRequest request){
+    private Car createCar(HttpServletRequest request) {
         return new Car(createMakerInfo(request), createOwnerInfo(request));
     }
 
-    private User getSessionUser(HttpServletRequest request){
+    private User getSessionUser(HttpServletRequest request) {
         return (User) request.getSession().getAttribute("user");
     }
 
-    private MakerInfo createMakerInfo(HttpServletRequest request){
+    private MakerInfo createMakerInfo(HttpServletRequest request) {
         return new MakerInfo(
                 request.getParameter("maker"),
                 request.getParameter("model"),
@@ -46,7 +52,7 @@ public class AddNewAdvertServlet extends HttpServlet {
                 Integer.parseInt(request.getParameter("year")));
     }
 
-    private OwnerInfo createOwnerInfo(HttpServletRequest request){
+    private OwnerInfo createOwnerInfo(HttpServletRequest request) {
         return new OwnerInfo(
                 Integer.parseInt(request.getParameter("mileage")),
                 request.getParameter("condition"),
