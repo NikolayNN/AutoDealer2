@@ -100,6 +100,22 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         session.close();
     }
 
+    @Override
+    public long recieveAdvertsCount(){
+         return (Long) getUniqueValue("select count(*) from AdvertRepository");
+    }
+
+    @Override
+    public List receiveAdvertsByPage(int first, int last){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("From AdvertRepository");
+        query.setFirstResult(first);
+        query.setMaxResults(last);
+        return query.list();
+    }
+
+
+
     private AdvertRepository createAdvertRepository(Advert advert){
         return new AdvertRepository(
                 createCarRepository(advert.getCar()),
@@ -170,7 +186,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         return (UsersRepository) getUniqueValue(String.format("from UsersRepository where name='%s'", name));
     }
 
-    public Object getUniqueValue(String hql) {
+    private Object getUniqueValue(String hql) {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery(hql);
         Object object = query.uniqueResult();

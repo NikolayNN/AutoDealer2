@@ -105,4 +105,13 @@ public class DatabaseManagerHibernateTest {
         databaseManager.saveAdvert(advert);
     }
 
+    @Test
+    public void getAdvertsCountTest(){
+        assertEquals(0, databaseManager.recieveAdvertsCount());
+    }
+
+    @Test
+    public void getAdvertsByPage(){
+        assertEquals(0, databaseManager.receiveAdvertsByPage(0,1));
+    }
 }

@@ -107,6 +107,30 @@
                 <hr/>
             </c:forEach>
         </div>
+        <div class="nav-bar">
+            <form method="get" action="showAdverts.do">
+                <input type="submit" value="first"/>
+            </form>
+            <form method="get" action="showAdverts.do">
+                <input type="hidden" name="page" value="${nextPage}"/>
+                <input type="submit" value="next"/>
+            </form>
+            <p> page: ${currentPage}</p>
+            <p> pages: ${pagesCount}</p>
+            <form method="get" action="showAdverts.do">
+                <input type="number" name="page"/>
+                <input type="submit" value="go"/>
+            </form>
+            <form method="get" action="showAdverts.do">
+                <input type="hidden" name="page" value="${previousPage}"/>
+                <input type="submit" value="prev"/>
+            </form>
+            <form method="get" action="showAdverts.do">
+                <input type="hidden" name="page" value="${pagesCount}"/>
+                <input type="submit" value="last"/>
+            </form>
+            </form>
+        </div>
     </div>
 </div>
 </body>

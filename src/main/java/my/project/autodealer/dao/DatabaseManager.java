@@ -1,8 +1,6 @@
 package my.project.autodealer.dao;
 
-import my.project.autodealer.dao.repositories.CarRepository;
 import my.project.autodealer.model.Advert;
-import my.project.autodealer.model.Car;
 import my.project.autodealer.model.User;
 
 import java.util.List;
@@ -33,4 +31,8 @@ public interface DatabaseManager {
     List getAdverts();
 
     void saveAdvert(Advert advert);
+
+    long recieveAdvertsCount();
+
+    List receiveAdvertsByPage(int first, int last);
 }

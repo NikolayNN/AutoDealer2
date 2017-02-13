@@ -116,6 +116,17 @@ public class ServiceImpl implements Service {
         return databaseManager.getAdverts();
     }
 
+    @Override
+    public long recieveAdvertsCount(){
+        return databaseManager.recieveAdvertsCount();
+    }
+
+    @Override
+    public List getAdvertsByPage(int currentPage, int advertsOnPage){
+        int first = currentPage * advertsOnPage;
+        return databaseManager.receiveAdvertsByPage(first, advertsOnPage);
+    }
+
 
 
 }
