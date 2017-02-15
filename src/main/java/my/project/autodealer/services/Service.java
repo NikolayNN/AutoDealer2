@@ -1,5 +1,5 @@
 package my.project.autodealer.services;
-import my.project.autodealer.dao.repositories.*;
+import my.project.autodealer.model.*;
 
 import java.util.List;
 

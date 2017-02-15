@@ -1,6 +1,6 @@
 package my.project.autodealer.dao;
 
-import my.project.autodealer.dao.repositories.User;
+import my.project.autodealer.model.User;
 import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;

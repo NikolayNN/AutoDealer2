@@ -1,4 +1,4 @@
-package my.project.autodealer.dao.repositories;
+package my.project.autodealer.model;
 
 /**
  * Created by Nikol on 1/29/2017.

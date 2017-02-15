@@ -1,6 +1,6 @@
 package my.project.autodealer.controller.servlets;
 
-import my.project.autodealer.dao.repositories.User;
+import my.project.autodealer.model.User;
 import my.project.autodealer.services.Service;
 
 import javax.servlet.ServletException;

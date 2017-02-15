@@ -1,18 +1,19 @@
-package my.project.autodealer.dao.repositories;
+package my.project.autodealer.model;
 
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class Model {
+public class Maker {
     private int id;
-    private String model;
+    private String maker;
 
-    public Model(String model) {
-        this.model = model;
+    public Maker(String maker) {
+        this.maker = maker;
     }
 
-    public Model() {
+    public Maker() {
     }
+
 
     public int getId() {
         return id;
@@ -22,12 +23,12 @@ public class Model {
         this.id = id;
     }
 
-    public String getModel() {
-        return model;
+    public String getMaker() {
+        return maker;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setMaker(String maker) {
+        this.maker = maker;
     }
 
     @Override
@@ -35,10 +36,10 @@ public class Model {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Model that = (Model) o;
+        Maker that = (Maker) o;
 
         if (id != that.id) return false;
-        if (model != null ? !model.equals(that.model) : that.model != null) return false;
+        if (maker != null ? !maker.equals(that.maker) : that.maker != null) return false;
 
         return true;
     }
@@ -46,7 +47,7 @@ public class Model {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (model != null ? model.hashCode() : 0);
+        result = 31 * result + (maker != null ? maker.hashCode() : 0);
         return result;
     }
 }

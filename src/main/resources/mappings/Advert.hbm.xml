@@ -3,25 +3,25 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="my.project.autodealer.dao.repositories.Advert" table="advert" schema="public"
+    <class name="my.project.autodealer.model.Advert" table="advert" schema="public"
            catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
             <generator class="increment"/>
         </id>
         <many-to-one name="car" column="car_id"
-                     class="my.project.autodealer.dao.repositories.Car" not-null="true"
+                     class="my.project.autodealer.model.Car" not-null="true"
                      cascade="save-update" lazy="false" fetch="select"/>
         <property name="createdDate">
             <column name="created_date" sql-type="integer"/>
         </property>
 
         <many-to-one name="users" column="users_id"
-                     class="my.project.autodealer.dao.repositories.User" not-null="true"
+                     class="my.project.autodealer.model.User" not-null="true"
                      cascade="save-update" lazy="false" fetch="select"/>
 
         <many-to-one name="status" column="status_id"
-                     class="my.project.autodealer.dao.repositories.Status" not-null="true"
+                     class="my.project.autodealer.model.Status" not-null="true"
                      cascade="save-update" lazy="false" fetch="select"/>
     </class>
 </hibernate-mapping>

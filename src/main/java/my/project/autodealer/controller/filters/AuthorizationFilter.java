@@ -1,6 +1,6 @@
 package my.project.autodealer.controller.filters;
 
-import my.project.autodealer.dao.repositories.User;
+import my.project.autodealer.model.User;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

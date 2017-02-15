@@ -1,17 +1,17 @@
-package my.project.autodealer.dao.repositories;
+package my.project.autodealer.model;
 
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class Status {
+public class Model {
     private int id;
-    private String status;
+    private String model;
 
-    public Status(String status) {
-        this.status = status;
+    public Model(String model) {
+        this.model = model;
     }
 
-    public Status() {
+    public Model() {
     }
 
     public int getId() {
@@ -22,12 +22,12 @@ public class Status {
         this.id = id;
     }
 
-    public String getStatus() {
-        return status;
+    public String getModel() {
+        return model;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     @Override
@@ -35,10 +35,10 @@ public class Status {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Status that = (Status) o;
+        Model that = (Model) o;
 
         if (id != that.id) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (model != null ? !model.equals(that.model) : that.model != null) return false;
 
         return true;
     }
@@ -46,7 +46,7 @@ public class Status {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (model != null ? model.hashCode() : 0);
         return result;
     }
 }

@@ -20,7 +20,7 @@
         <mapping resource="mappings/Transmission.hbm.xml"/>
         <mapping resource="mappings/MakerInfo.hbm.xml"/>
         <mapping resource="mappings/OwnerInfo.hbm.xml"/>
-        <mapping class="my.project.autodealer.dao.repositories.Car" />
+        <mapping class="my.project.autodealer.model.Car" />
         <mapping resource="mappings/Users.hbm.xml"/>
         <mapping resource="mappings/Advert.hbm.xml"/>
     </session-factory>
