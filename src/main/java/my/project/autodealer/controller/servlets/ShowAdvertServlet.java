@@ -1,6 +1,6 @@
 package my.project.autodealer.controller.servlets;
 
-import my.project.autodealer.dao.repositories.AdvertRepository;
+import my.project.autodealer.dao.repositories.Advert;
 import my.project.autodealer.services.Service;
 
 import javax.servlet.ServletException;
@@ -24,7 +24,7 @@ public class ShowAdvertServlet extends HttpServlet {
         long advertsCount = service.recieveAdvertsCount();
         long pagesCount = advertsCount / ADVERTS_ON_PAGE; //todo make constant
         long currentPage = setCurrentPageNumber(request, pagesCount);
-        List<AdvertRepository> adverts = (List<AdvertRepository>) service.getAdvertsByPage((int) currentPage, ADVERTS_ON_PAGE);
+        List<Advert> adverts = (List<Advert>) service.getAdvertsByPage((int) currentPage, ADVERTS_ON_PAGE);
         request.setAttribute("nextPage", setNextPageNumber(currentPage, pagesCount));
         request.setAttribute("previousPage", setPreviousPageNumber(currentPage));
         request.setAttribute("currentPage", currentPage);

@@ -1,11 +1,8 @@
 package my.project.autodealer.dao;
 
+import my.project.autodealer.dao.repositories.MakerInfoRepository;
 import my.project.autodealer.dao.repositories.UsersRepository;
-import my.project.autodealer.model.*;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 public class DatabaseManagerHibernateTest {
     private static SessionFactory sessionFactory;
     private DatabaseManager databaseManager;
-    private User testUser;
+    private UsersRepository testUser;
 
     static {
         sessionFactory = HibernateUtil.getSessionFactory();
@@ -28,7 +25,7 @@ public class DatabaseManagerHibernateTest {
 
     @Before
     public void setup() {
-        testUser = new User("testName", "testPassword", "test234@mail.ru");
+        testUser = new UsersRepository("testName", "testPassword", "test234@mail.ru");
 //        addTestRecordToDatabase();
         databaseManager = new DatabaseManagerHibernate();
     }
@@ -63,12 +60,12 @@ public class DatabaseManagerHibernateTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void getUnknownUser() throws Exception {
-        databaseManager.getUser("unknownUser");
+        databaseManager.loadUser("unknownUser");
     }
 
     @Test
     public void getUser() throws Exception {
-        User actualUser = databaseManager.getUser(testUser.getName());
+        UsersRepository actualUser = databaseManager.loadUser(testUser.getName());
         assertEquals(actualUser.getName(), testUser.getName());
         assertEquals(actualUser.getPassword(), testUser.getPassword());
         assertEquals(actualUser.getEmail(), testUser.getEmail());
@@ -81,29 +78,29 @@ public class DatabaseManagerHibernateTest {
 
     @Test
     public void getAutoMakers(){
-        assertEquals(4, databaseManager.getAutoMakers().size());
+        assertEquals(4, databaseManager.loadAutoMakers().size());
     }
 
-    @Test
-    public void saveAdvert(){
-        MakerInfo makerInfo = new MakerInfo(
-                "honda",
-                "civic",
-                "sedan",
-                "manual",
-                "gasoline",
-                2500,
-                2007);
-        OwnerInfo ownerInfo = new OwnerInfo(
-                200000,
-                "new",
-                "testDescription",
-                12000);
-
-        Car car = new Car(makerInfo, ownerInfo);
-        Advert advert = new Advert(car, new Date().getTime()/1000, testUser, "new");
-        databaseManager.saveAdvert(advert);
-    }
+//    @Test
+//    public void saveAdvert(){
+//        MakerInfoRepository makerInfo = new MakerInfoRepository(
+//                "honda",
+//                "civic",
+//                "sedan",
+//                "manual",
+//                "gasoline",
+//                2500,
+//                2007);
+//        OwnerInfo ownerInfo = new OwnerInfo(
+//                200000,
+//                "new",
+//                "testDescription",
+//                12000);
+//
+//        Car car = new Car(makerInfo, ownerInfo);
+//        Advert advert = new Advert(car, new Date().getTime()/1000, testUser, "new");
+//        databaseManager.saveAdvert(advert);
+//    }
 
     @Test
     public void getAdvertsCountTest(){

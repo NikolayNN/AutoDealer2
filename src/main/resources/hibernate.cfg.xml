@@ -20,9 +20,8 @@
         <mapping resource="mappings/RefTransmissionRepository.hbm.xml"/>
         <mapping resource="mappings/MakerinfoRepository.hbm.xml"/>
         <mapping resource="mappings/OwnerinfoRepository.hbm.xml"/>
-        <!--<mapping resource="mappings/CarRepository.hbm.xml"/>-->
         <mapping class="my.project.autodealer.dao.repositories.CarRepository" />
         <mapping resource="mappings/UsersRepository.hbm.xml"/>
-        <mapping resource="mappings/AdvertRepository.hbm.xml"/>
+        <mapping resource="mappings/Advert.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

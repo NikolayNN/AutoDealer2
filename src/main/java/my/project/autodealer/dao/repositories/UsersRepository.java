@@ -1,7 +1,5 @@
 package my.project.autodealer.dao.repositories;
 
-import my.project.autodealer.model.User;
-
 /**
  * Created by Nikol on 2/4/2017.
  */
@@ -10,6 +8,15 @@ public class UsersRepository {
     private String name;
     private String password;
     private String email;
+
+    public UsersRepository() {
+    }
+
+    public UsersRepository(String name, String password, String email) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+    }
 
     public int getId() {
         return id;
@@ -41,16 +48,6 @@ public class UsersRepository {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void createUser(User user){
-        name = user.getName();
-        password = user.getPassword();
-        email = user.getEmail();
-    }
-
-    public User getUser(){
-        return new User(name, password, email);
     }
 
     @Override

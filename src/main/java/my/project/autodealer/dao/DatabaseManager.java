@@ -1,7 +1,6 @@
 package my.project.autodealer.dao;
 
-import my.project.autodealer.model.Advert;
-import my.project.autodealer.model.User;
+import my.project.autodealer.dao.repositories.*;
 
 import java.util.List;
 
@@ -10,29 +9,43 @@ import java.util.List;
  */
 public interface DatabaseManager {
 
-    void addNewUser(User user);
+    void addNewUser(UsersRepository user);
 
-    User getUser(String name);
+    UsersRepository loadUser(String name);
 
     boolean isExistUser(String name, String password);
 
-    List getAutoMakers();
+    List loadAutoMakers();
 
-    List getAutoModels();
+    List loadAutoModels();
 
-    List getCarBody();
+    List loadCarBodies();
 
-    List getTransmissions();
+    List loadTransmissions();
 
-    List getConditions();
+    List loadConditions();
 
-    List getFuelType();
+    RefMakerRepository loadMaker(String maker);
 
-    List getAdverts();
+    RefModelRepository loadModel(String model);
+
+    RefCarbodyRepository loadCarbody(String body);
+
+    RefTransmissionRepository loadTransmission(String transmission);
+
+    RefFueltypeRepository loadFuelType(String fuelType);
+
+    RefConditionRepository loadCondition(String name);
+
+    List loadFuelType();
+
+    List loadAdverts();
 
     void saveAdvert(Advert advert);
 
     long recieveAdvertsCount();
 
     List receiveAdvertsByPage(int first, int last);
+
+    RefStatusRepository loadStatus(String status);
 }

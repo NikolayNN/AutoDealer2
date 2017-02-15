@@ -1,6 +1,6 @@
 package my.project.autodealer.controller.servlets;
 
-import my.project.autodealer.model.User;
+import my.project.autodealer.dao.repositories.UsersRepository;
 import my.project.autodealer.services.Service;
 
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ public class SignInServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         try {
-            User user = service.receiveUser(login);
+            UsersRepository user = service.loadUser(login);
             if (checkUserPassword(user, password)) {
                 request.getSession().setAttribute("user", user);
                 response.sendRedirect("secret/secret.jsp");
@@ -34,7 +34,7 @@ public class SignInServlet extends HttpServlet {
 
     }
 
-    private boolean checkUserPassword(User user, String password) {
+    private boolean checkUserPassword(UsersRepository user, String password) {
         if (user.getPassword().equals(password)) {
             return true;
         } else {

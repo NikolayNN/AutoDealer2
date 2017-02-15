@@ -1,6 +1,6 @@
 package my.project.autodealer.controller.filters;
 
-import my.project.autodealer.model.User;
+import my.project.autodealer.dao.repositories.UsersRepository;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ public class AuthorizationFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        User user = (User) request.getSession().getAttribute("user");
+        UsersRepository user = (UsersRepository) request.getSession().getAttribute("user");
         if(user == null){
             response.sendRedirect("../signIn.html");
             return;

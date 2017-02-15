@@ -3,21 +3,21 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 2/4/2017.
  */
-public class AdvertRepository {
+public class Advert {
     private int id;
     private CarRepository car;
     private UsersRepository users;
     private RefStatusRepository status;
     private long createdDate;
 
-    public AdvertRepository(CarRepository car, UsersRepository users, RefStatusRepository status, long createdDate) {
+    public Advert(CarRepository car, UsersRepository users, RefStatusRepository status, long createdDate) {
         this.car = car;
         this.users = users;
         this.status = status;
         this.createdDate = createdDate;
     }
 
-    public AdvertRepository() {
+    public Advert() {
     }
 
     public int getId() {
@@ -65,7 +65,7 @@ public class AdvertRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdvertRepository that = (AdvertRepository) o;
+        Advert that = (Advert) o;
 
         if (id != that.id) return false;
         if (createdDate != that.createdDate) return false;

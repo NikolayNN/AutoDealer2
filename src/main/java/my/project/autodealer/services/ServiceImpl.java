@@ -2,8 +2,6 @@ package my.project.autodealer.services;
 
 import my.project.autodealer.dao.DatabaseManager;
 import my.project.autodealer.dao.repositories.*;
-import my.project.autodealer.model.Advert;
-import my.project.autodealer.model.User;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,13 +18,13 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void addNewUser(User user) {
+    public void addNewUser(UsersRepository user) {
         databaseManager.addNewUser(user);
     }
 
     @Override
-    public User receiveUser(String name) {
-        return databaseManager.getUser(name);
+    public UsersRepository loadUser(String name) {
+        return databaseManager.loadUser(name);
     }
 
     @Override
@@ -37,7 +35,7 @@ public class ServiceImpl implements Service {
     @Override
     public List<String> getAutoMakers(){
         List<String> result = new ArrayList<>();
-        List list = databaseManager.getAutoMakers();
+        List list = databaseManager.loadAutoMakers();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefMakerRepository refMaker = (RefMakerRepository) iter.next();
@@ -47,9 +45,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public RefMakerRepository loadMaker(String maker) {
+        return databaseManager.loadMaker(maker);
+    }
+
+    @Override
     public List<String> getAutoModels(){
         List<String> result = new ArrayList<>();
-        List list = databaseManager.getAutoModels();
+        List list = databaseManager.loadAutoModels();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefModelRepository refModel = (RefModelRepository) iter.next();
@@ -59,9 +62,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public RefModelRepository loadModel(String model) {
+        return databaseManager.loadModel(model);
+    }
+
+    @Override
     public List<String> getCarBodies(){
         List<String> result = new ArrayList<>();
-        List list = databaseManager.getCarBody();
+        List list = databaseManager.loadCarBodies();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefCarbodyRepository refCarbody = (RefCarbodyRepository) iter.next();
@@ -71,9 +79,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public RefCarbodyRepository loadCarbody(String body) {
+        return databaseManager.loadCarbody(body);
+    }
+
+    @Override
     public List<String> getTransmissions(){
         List<String> result = new ArrayList<>();
-        List list = databaseManager.getTransmissions();
+        List list = databaseManager.loadTransmissions();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefTransmissionRepository refTransmission = (RefTransmissionRepository) iter.next();
@@ -83,9 +96,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public RefTransmissionRepository loadTransmission(String transmission) {
+        return databaseManager.loadTransmission(transmission);
+    }
+
+    @Override
     public List<String> getFuelTypes(){
         List<String> result = new ArrayList<>();
-        List list = databaseManager.getFuelType();
+        List list = databaseManager.loadFuelType();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefFueltypeRepository refFueltype = (RefFueltypeRepository) iter.next();
@@ -95,9 +113,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public RefFueltypeRepository loadFuelType(String fuelType) {
+        return databaseManager.loadFuelType(fuelType);
+    }
+
+    @Override
     public List<String> getConditions(){
         List<String> result = new ArrayList<>();
-        List list = databaseManager.getConditions();
+        List list = databaseManager.loadConditions();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
             RefConditionRepository condition = (RefConditionRepository) iter.next();
@@ -107,13 +130,18 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public RefConditionRepository loadCondition(String name) {
+        return databaseManager.loadCondition(name);
+    }
+
+    @Override
     public void saveAdvert(Advert advert) {
         databaseManager.saveAdvert(advert);
     }
 
     @Override
     public List getAdverts() {
-        return databaseManager.getAdverts();
+        return databaseManager.loadAdverts();
     }
 
     @Override
@@ -127,6 +155,10 @@ public class ServiceImpl implements Service {
         return databaseManager.receiveAdvertsByPage(first, advertsOnPage);
     }
 
+    @Override
+    public RefStatusRepository loadStatus(String status) {
+        return databaseManager.loadStatus(status);
+    }
 
 
 }

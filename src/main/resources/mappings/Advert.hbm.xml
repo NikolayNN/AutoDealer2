@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="my.project.autodealer.dao.repositories.AdvertRepository" table="advert" schema="public"
+    <class name="my.project.autodealer.dao.repositories.Advert" table="advert" schema="public"
            catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
