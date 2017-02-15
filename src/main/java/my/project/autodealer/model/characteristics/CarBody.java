@@ -3,15 +3,15 @@ package my.project.autodealer.model.characteristics;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class Carbody {
+public class CarBody {
     private int id;
     private String carBody;
 
-    public Carbody(String carBody) {
+    public CarBody(String carBody) {
         this.carBody = carBody;
     }
 
-    public Carbody() {
+    public CarBody() {
 
     }
 
@@ -38,7 +38,7 @@ public class Carbody {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Carbody that = (Carbody) o;
+        CarBody that = (CarBody) o;
 
         if (id != that.id) return false;
         if (carBody != null ? !carBody.equals(that.carBody) : that.carBody != null) return false;

@@ -25,7 +25,7 @@ public interface Service {
 
     List<String> getCarBodies();
 
-    Carbody loadCarbody(String body);
+    CarBody loadCarbody(String body);
 
     List<String> getTransmissions();
 

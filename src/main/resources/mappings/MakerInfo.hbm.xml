@@ -14,7 +14,7 @@
         <many-to-one name="refModel" column="model_id"
                      class="my.project.autodealer.model.characteristics.Model" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refCarBody" column="car_body_id"
-                     class="my.project.autodealer.model.characteristics.Carbody" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+                     class="my.project.autodealer.model.characteristics.CarBody" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refTransmission" column="transmission_id"
                      class="my.project.autodealer.model.characteristics.Transmission" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refFuelType" column="fuel_type_id"

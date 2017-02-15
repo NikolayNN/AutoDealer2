@@ -9,7 +9,7 @@ public class MakerInfo {
     private int id;
     private Maker refMaker;
     private Model refModel;
-    private Carbody refCarBody;
+    private CarBody refCarBody;
     private Transmission refTransmission;
     private FuelType refFuelType;
     private short capacity;
@@ -22,7 +22,7 @@ public class MakerInfo {
     public MakerInfo() {
     }
 
-    public MakerInfo(Maker refMaker, Model refModel, Carbody refCarBody, Transmission refTransmission, FuelType refFuelType, short capacity, short year) {
+    public MakerInfo(Maker refMaker, Model refModel, CarBody refCarBody, Transmission refTransmission, FuelType refFuelType, short capacity, short year) {
         this.refMaker = refMaker;
         this.refModel = refModel;
         this.refCarBody = refCarBody;
@@ -52,11 +52,11 @@ public class MakerInfo {
         this.refModel = model;
     }
 
-    public Carbody getRefCarBody() {
+    public CarBody getRefCarBody() {
         return refCarBody;
     }
 
-    public void setRefCarBody(Carbody carBody) {
+    public void setRefCarBody(CarBody carBody) {
         this.refCarBody = carBody;
     }
 

@@ -59,7 +59,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
 
     @Override
     public List loadCarBodies() {
-        return getList("from Carbody");
+        return getList("from CarBody");
     }
 
     @Override
@@ -116,8 +116,8 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     }
 
     @Override
-    public Carbody loadCarbody(String body) {
-        return (Carbody) getUniqueValue(String.format("from Carbody where car_body='%s'", body));
+    public CarBody loadCarbody(String body) {
+        return (CarBody) getUniqueValue(String.format("from CarBody where car_body='%s'", body));
     }
 
     @Override

@@ -73,14 +73,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadCarBodies();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            Carbody refCarbody = (Carbody) iter.next();
+            CarBody refCarbody = (CarBody) iter.next();
             result.add(refCarbody.getCarBody());
         }
         return result;
     }
 
     @Override
-    public Carbody loadCarbody(String body) {
+    public CarBody loadCarbody(String body) {
         return databaseManager.loadCarbody(body);
     }
 
