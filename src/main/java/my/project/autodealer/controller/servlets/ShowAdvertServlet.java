@@ -21,7 +21,7 @@ public class ShowAdvertServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final int ADVERTS_ON_PAGE = 5;
         Service service = (Service) request.getServletContext().getAttribute("service");
-        long advertsCount = service.recieveAdvertsCount();
+        long advertsCount = service.receiveAdvertsCount();
         long pagesCount = advertsCount / ADVERTS_ON_PAGE; //todo make constant
         long currentPage = setCurrentPageNumber(request, pagesCount);
         List<Advert> adverts = (List<Advert>) service.getAdvertsByPage((int) currentPage, ADVERTS_ON_PAGE);

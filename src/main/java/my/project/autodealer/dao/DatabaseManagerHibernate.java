@@ -115,7 +115,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     }
 
     @Override
-    public CarBody loadCarbody(String body) {
+    public CarBody loadCarBody(String body) {
         return (CarBody) getUniqueValue(String.format("from CarBody where car_body='%s'", body));
     }
 

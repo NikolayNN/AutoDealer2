@@ -13,8 +13,6 @@ public interface Service {
 
     User loadUser(String name);
 
-    boolean isExistUser(String name, String password);
-
     List<String> getAutoMakers();
 
     Maker loadMaker(String maker);
@@ -25,7 +23,7 @@ public interface Service {
 
     List<String> getCarBodies();
 
-    CarBody loadCarbody(String body);
+    CarBody loadCarBody(String body);
 
     List<String> getTransmissions();
 
@@ -41,9 +39,7 @@ public interface Service {
 
     void saveAdvert(Advert advert);
 
-    List getAdverts();
-
-    long recieveAdvertsCount();
+    long receiveAdvertsCount();
 
     List getAdvertsByPage(int currentPage, int advertsOnPage);
 

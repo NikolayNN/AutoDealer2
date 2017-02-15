@@ -80,8 +80,8 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public CarBody loadCarbody(String body) {
-        return databaseManager.loadCarbody(body);
+    public CarBody loadCarBody(String body) {
+        return databaseManager.loadCarBody(body);
     }
 
     @Override
@@ -146,7 +146,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public long recieveAdvertsCount(){
+    public long receiveAdvertsCount(){
         return databaseManager.receiveAdvertsCount();
     }
 

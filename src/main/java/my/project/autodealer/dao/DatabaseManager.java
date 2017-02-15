@@ -30,7 +30,7 @@ public interface DatabaseManager {
 
     Model loadModel(String model);
 
-    CarBody loadCarbody(String body);
+    CarBody loadCarBody(String body);
 
     Transmission loadTransmission(String transmission);
 

@@ -47,7 +47,7 @@ public class AddNewAdvertServlet extends HttpServlet {
         return new MakerInfo(
                 service.loadMaker(request.getParameter("maker")),
                 service.loadModel(request.getParameter("model")),
-                service.loadCarbody(request.getParameter("body")),
+                service.loadCarBody(request.getParameter("body")),
                 service.loadTransmission(request.getParameter("transmission")),
                 service.loadFuelType(request.getParameter("fuelType")),
                 Short.parseShort(request.getParameter("capacity")),
