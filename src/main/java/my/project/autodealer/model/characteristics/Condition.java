@@ -1,4 +1,4 @@
-package my.project.autodealer.model;
+package my.project.autodealer.model.characteristics;
 
 
 /**

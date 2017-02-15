@@ -1,19 +1,19 @@
-package my.project.autodealer.model;
+package my.project.autodealer.model.characteristics;
 
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class Carbody {
+public class Maker {
     private int id;
-    private String carBody;
+    private String maker;
 
-    public Carbody(String carBody) {
-        this.carBody = carBody;
+    public Maker(String maker) {
+        this.maker = maker;
     }
 
-    public Carbody() {
-
+    public Maker() {
     }
+
 
     public int getId() {
         return id;
@@ -23,25 +23,23 @@ public class Carbody {
         this.id = id;
     }
 
-    public String getCarBody() {
-        return carBody;
+    public String getMaker() {
+        return maker;
     }
 
-    public void setCarBody(String carBody) {
-        this.carBody = carBody;
+    public void setMaker(String maker) {
+        this.maker = maker;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Carbody that = (Carbody) o;
+        Maker that = (Maker) o;
 
         if (id != that.id) return false;
-        if (carBody != null ? !carBody.equals(that.carBody) : that.carBody != null) return false;
+        if (maker != null ? !maker.equals(that.maker) : that.maker != null) return false;
 
         return true;
     }
@@ -49,7 +47,7 @@ public class Carbody {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (carBody != null ? carBody.hashCode() : 0);
+        result = 31 * result + (maker != null ? maker.hashCode() : 0);
         return result;
     }
 }

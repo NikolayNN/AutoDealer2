@@ -1,6 +1,7 @@
 package my.project.autodealer.dao;
 
 import my.project.autodealer.model.*;
+import my.project.autodealer.model.characteristics.*;
 
 import java.util.List;
 

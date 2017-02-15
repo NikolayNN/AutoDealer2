@@ -10,15 +10,15 @@
             <generator class="increment"/>
         </id>
         <many-to-one name="refMaker" column="maker_id"
-                     class="my.project.autodealer.model.Maker" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+                     class="my.project.autodealer.model.characteristics.Maker" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refModel" column="model_id"
-                     class="my.project.autodealer.model.Model" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+                     class="my.project.autodealer.model.characteristics.Model" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refCarBody" column="car_body_id"
-                     class="my.project.autodealer.model.Carbody" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+                     class="my.project.autodealer.model.characteristics.Carbody" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refTransmission" column="transmission_id"
-                     class="my.project.autodealer.model.Transmission" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+                     class="my.project.autodealer.model.characteristics.Transmission" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <many-to-one name="refFuelType" column="fuel_type_id"
-                     class="my.project.autodealer.model.FuelType" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+                     class="my.project.autodealer.model.characteristics.FuelType" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
         <property name="capacity">
             <column name="capacity" sql-type="smallint"/>
         </property>

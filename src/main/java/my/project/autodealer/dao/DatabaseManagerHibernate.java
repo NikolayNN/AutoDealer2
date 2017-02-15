@@ -1,6 +1,7 @@
 package my.project.autodealer.dao;
 
 import my.project.autodealer.model.*;
+import my.project.autodealer.model.characteristics.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

@@ -1,5 +1,6 @@
 package my.project.autodealer.services;
 import my.project.autodealer.model.*;
+import my.project.autodealer.model.characteristics.*;
 
 import java.util.List;
 

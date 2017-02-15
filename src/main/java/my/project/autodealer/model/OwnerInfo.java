@@ -1,5 +1,7 @@
 package my.project.autodealer.model;
 
+import my.project.autodealer.model.characteristics.Condition;
+
 /**
  * Created by Nikol on 1/30/2017.
  */
