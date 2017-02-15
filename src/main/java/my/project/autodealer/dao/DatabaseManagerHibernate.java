@@ -29,14 +29,13 @@ public class DatabaseManagerHibernate implements DatabaseManager {
 
     @Override
     public User loadUser(String name) {
-
-        return loadUserRepository(name);
+        return (User) getUniqueValue(String.format("from User where name='%s'", name));
     }
 
     @Override
     public boolean isExistUser(String name, String password) {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("from UsersRepository where name =:name and password =:password ");
+        Query query = session.createQuery("from User where name =:name and password =:password ");
         query.setParameter("name", name);
         query.setParameter("password", password);
         User user = (User) query.uniqueResult();
@@ -138,10 +137,6 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     @Override
     public Status loadStatus(String status) {
         return (Status) getUniqueValue(String.format("from Status where status='%s'", status));
-    }
-
-    private User loadUserRepository(String name){
-        return (User) getUniqueValue(String.format("from User where name='%s'", name));
     }
 
     private Object getUniqueValue(String hql) {
