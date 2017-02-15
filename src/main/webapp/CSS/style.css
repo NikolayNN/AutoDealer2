@@ -1,3 +1,7 @@
 .error{
     visibility: hidden;
 }
+
+.nav{
+    display: inline-block;
+}

@@ -25,6 +25,7 @@
 <head>
     <script src="js/formValidate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="CSS/style.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
@@ -108,26 +109,26 @@
             </c:forEach>
         </div>
         <div class="nav-bar">
-            <form method="get" action="showAdverts.do">
-                <input type="submit" value="first"/>
+            <form method="get" action="showAdverts.do" class="nav">
+                <input type="submit" value="<<"/>
             </form>
-            <form method="get" action="showAdverts.do">
-                <input type="hidden" name="page" value="${nextPage}"/>
-                <input type="submit" value="next"/>
+            <form method="get" action="showAdverts.do" class="nav">
+                <input type="hidden" name="page" value="${previousPage}"/>
+                <input type="submit" value="<"/>
             </form>
-            <p> page: ${currentPage}</p>
-            <p> pages: ${pagesCount}</p>
-            <form method="get" action="showAdverts.do">
-                <input type="number" name="page"/>
+            <span> page: ${currentPage}</span>
+            <span> pages: ${pagesCount}</span>
+            <form method="get" action="showAdverts.do" class="nav">
+                <input type="number" name="page" size="3" min="0" max="${pagesCount}"/>
                 <input type="submit" value="go"/>
             </form>
-            <form method="get" action="showAdverts.do">
-                <input type="hidden" name="page" value="${previousPage}"/>
-                <input type="submit" value="prev"/>
+            <form method="get" action="showAdverts.do" class="nav">
+                <input type="hidden" name="page" value="${nextPage}"/>
+                <input type="submit" value=">"/>
             </form>
-            <form method="get" action="showAdverts.do">
+            <form method="get" action="showAdverts.do" class="nav">
                 <input type="hidden" name="page" value="${pagesCount}"/>
-                <input type="submit" value="last"/>
+                <input type="submit" value=">>"/>
             </form>
             </form>
         </div>
