@@ -1,12 +1,9 @@
 package my.project.autodealer.dao;
 
-import my.project.autodealer.dao.repositories.MakerInfoRepository;
-import my.project.autodealer.dao.repositories.UsersRepository;
+import my.project.autodealer.dao.repositories.User;
 import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -17,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class DatabaseManagerHibernateTest {
     private static SessionFactory sessionFactory;
     private DatabaseManager databaseManager;
-    private UsersRepository testUser;
+    private User testUser;
 
     static {
         sessionFactory = HibernateUtil.getSessionFactory();
@@ -25,14 +22,14 @@ public class DatabaseManagerHibernateTest {
 
     @Before
     public void setup() {
-        testUser = new UsersRepository("testName", "testPassword", "test234@mail.ru");
+        testUser = new User("testName", "testPassword", "test234@mail.ru");
 //        addTestRecordToDatabase();
         databaseManager = new DatabaseManagerHibernate();
     }
 //
 //    private void addTestRecordToDatabase() {
 //        Session session = sessionFactory.openSession();
-//        UsersRepository usersRepository = new UsersRepository();
+//        User usersRepository = new User();
 //        usersRepository.createUser(testUser);
 //        session.beginTransaction();
 //        session.save(usersRepository);
@@ -44,9 +41,9 @@ public class DatabaseManagerHibernateTest {
 //    @After
 //    public void destroy() {
 //        Session session = sessionFactory.openSession();
-//        Query query = session.createQuery("from UsersRepository where name =:name ");
+//        Query query = session.createQuery("from User where name =:name ");
 //        query.setParameter("name", testUser.getName());
-//        UsersRepository usersRepository = (UsersRepository) query.uniqueResult();
+//        User usersRepository = (User) query.uniqueResult();
 //        session.beginTransaction();
 //        session.delete(usersRepository);
 //        session.getTransaction().commit();
@@ -65,7 +62,7 @@ public class DatabaseManagerHibernateTest {
 
     @Test
     public void getUser() throws Exception {
-        UsersRepository actualUser = databaseManager.loadUser(testUser.getName());
+        User actualUser = databaseManager.loadUser(testUser.getName());
         assertEquals(actualUser.getName(), testUser.getName());
         assertEquals(actualUser.getPassword(), testUser.getPassword());
         assertEquals(actualUser.getEmail(), testUser.getEmail());
@@ -83,7 +80,7 @@ public class DatabaseManagerHibernateTest {
 
 //    @Test
 //    public void saveAdvert(){
-//        MakerInfoRepository makerInfo = new MakerInfoRepository(
+//        MakerInfo makerInfo = new MakerInfo(
 //                "honda",
 //                "civic",
 //                "sedan",

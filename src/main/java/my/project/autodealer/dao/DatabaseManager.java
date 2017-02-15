@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface DatabaseManager {
 
-    void addNewUser(UsersRepository user);
+    void addNewUser(User user);
 
-    UsersRepository loadUser(String name);
+    User loadUser(String name);
 
     boolean isExistUser(String name, String password);
 
@@ -25,17 +25,17 @@ public interface DatabaseManager {
 
     List loadConditions();
 
-    RefMakerRepository loadMaker(String maker);
+    Maker loadMaker(String maker);
 
-    RefModelRepository loadModel(String model);
+    Model loadModel(String model);
 
-    RefCarbodyRepository loadCarbody(String body);
+    Carbody loadCarbody(String body);
 
-    RefTransmissionRepository loadTransmission(String transmission);
+    Transmission loadTransmission(String transmission);
 
-    RefFueltypeRepository loadFuelType(String fuelType);
+    FuelType loadFuelType(String fuelType);
 
-    RefConditionRepository loadCondition(String name);
+    Condition loadCondition(String name);
 
     List loadFuelType();
 
@@ -47,5 +47,5 @@ public interface DatabaseManager {
 
     List receiveAdvertsByPage(int first, int last);
 
-    RefStatusRepository loadStatus(String status);
+    Status loadStatus(String status);
 }

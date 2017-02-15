@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="my.project.autodealer.dao.repositories.MakerInfo" table="makerinfo" schema="public" catalog="AutoDealer">
+        <id name="id">
+            <column name="id" sql-type="integer"/>
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="refMaker" column="maker_id"
+                     class="my.project.autodealer.dao.repositories.Maker" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+        <many-to-one name="refModel" column="model_id"
+                     class="my.project.autodealer.dao.repositories.Model" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+        <many-to-one name="refCarBody" column="car_body_id"
+                     class="my.project.autodealer.dao.repositories.Carbody" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+        <many-to-one name="refTransmission" column="transmission_id"
+                     class="my.project.autodealer.dao.repositories.Transmission" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+        <many-to-one name="refFuelType" column="fuel_type_id"
+                     class="my.project.autodealer.dao.repositories.FuelType" not-null="true" cascade="save-update" lazy="false" fetch="select"/>
+        <property name="capacity">
+            <column name="capacity" sql-type="smallint"/>
+        </property>
+        <property name="year">
+            <column name="year" sql-type="smallint"/>
+        </property>
+    </class>
+</hibernate-mapping>

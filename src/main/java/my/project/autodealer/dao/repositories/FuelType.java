@@ -3,15 +3,15 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class RefStatusRepository {
+public class FuelType {
     private int id;
-    private String status;
+    private String fuelType;
 
-    public RefStatusRepository(String status) {
-        this.status = status;
+    public FuelType(String fuelType) {
+        this.fuelType = fuelType;
     }
 
-    public RefStatusRepository() {
+    public FuelType() {
     }
 
     public int getId() {
@@ -22,12 +22,12 @@ public class RefStatusRepository {
         this.id = id;
     }
 
-    public String getStatus() {
-        return status;
+    public String getFuelType() {
+        return fuelType;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
     }
 
     @Override
@@ -35,10 +35,10 @@ public class RefStatusRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RefStatusRepository that = (RefStatusRepository) o;
+        FuelType that = (FuelType) o;
 
         if (id != that.id) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (fuelType != null ? !fuelType.equals(that.fuelType) : that.fuelType != null) return false;
 
         return true;
     }
@@ -46,7 +46,7 @@ public class RefStatusRepository {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (fuelType != null ? fuelType.hashCode() : 0);
         return result;
     }
 }

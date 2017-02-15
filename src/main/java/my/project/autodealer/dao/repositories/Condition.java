@@ -5,15 +5,15 @@ package my.project.autodealer.dao.repositories;
  * Created by Nikol on 1/29/2017.
  */
 
-public class RefConditionRepository {
+public class Condition {
     private int id;
     private String condition;
 
-    public RefConditionRepository(String condition) {
+    public Condition(String condition) {
         this.condition = condition;
     }
 
-    public RefConditionRepository() {
+    public Condition() {
     }
 
     public int getId() {
@@ -37,7 +37,7 @@ public class RefConditionRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RefConditionRepository that = (RefConditionRepository) o;
+        Condition that = (Condition) o;
 
         if (id != that.id) return false;
         if (condition != null ? !condition.equals(that.condition) : that.condition != null) return false;

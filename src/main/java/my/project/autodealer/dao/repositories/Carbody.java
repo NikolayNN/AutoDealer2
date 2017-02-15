@@ -3,15 +3,16 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class RefModelRepository {
+public class Carbody {
     private int id;
-    private String model;
+    private String carBody;
 
-    public RefModelRepository(String model) {
-        this.model = model;
+    public Carbody(String carBody) {
+        this.carBody = carBody;
     }
 
-    public RefModelRepository() {
+    public Carbody() {
+
     }
 
     public int getId() {
@@ -22,23 +23,25 @@ public class RefModelRepository {
         this.id = id;
     }
 
-    public String getModel() {
-        return model;
+    public String getCarBody() {
+        return carBody;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setCarBody(String carBody) {
+        this.carBody = carBody;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RefModelRepository that = (RefModelRepository) o;
+        Carbody that = (Carbody) o;
 
         if (id != that.id) return false;
-        if (model != null ? !model.equals(that.model) : that.model != null) return false;
+        if (carBody != null ? !carBody.equals(that.carBody) : that.carBody != null) return false;
 
         return true;
     }
@@ -46,7 +49,7 @@ public class RefModelRepository {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (model != null ? model.hashCode() : 0);
+        result = 31 * result + (carBody != null ? carBody.hashCode() : 0);
         return result;
     }
 }

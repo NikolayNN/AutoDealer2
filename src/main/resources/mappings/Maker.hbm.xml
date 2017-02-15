@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="my.project.autodealer.dao.repositories.RefMakerRepository" table="ref_maker" schema="public" catalog="AutoDealer">
+    <class name="my.project.autodealer.dao.repositories.Maker" table="ref_maker" schema="public" catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
             <generator class="increment"/>

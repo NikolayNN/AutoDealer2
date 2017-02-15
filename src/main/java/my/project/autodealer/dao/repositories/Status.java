@@ -3,17 +3,16 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class RefMakerRepository {
+public class Status {
     private int id;
-    private String maker;
+    private String status;
 
-    public RefMakerRepository(String maker) {
-        this.maker = maker;
+    public Status(String status) {
+        this.status = status;
     }
 
-    public RefMakerRepository() {
+    public Status() {
     }
-
 
     public int getId() {
         return id;
@@ -23,12 +22,12 @@ public class RefMakerRepository {
         this.id = id;
     }
 
-    public String getMaker() {
-        return maker;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMaker(String maker) {
-        this.maker = maker;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -36,10 +35,10 @@ public class RefMakerRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RefMakerRepository that = (RefMakerRepository) o;
+        Status that = (Status) o;
 
         if (id != that.id) return false;
-        if (maker != null ? !maker.equals(that.maker) : that.maker != null) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
 
         return true;
     }
@@ -47,7 +46,7 @@ public class RefMakerRepository {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (maker != null ? maker.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
 }

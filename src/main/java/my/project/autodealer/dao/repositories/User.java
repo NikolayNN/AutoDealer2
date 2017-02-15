@@ -3,16 +3,16 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 2/4/2017.
  */
-public class UsersRepository {
+public class User {
     private int id;
     private String name;
     private String password;
     private String email;
 
-    public UsersRepository() {
+    public User() {
     }
 
-    public UsersRepository(String name, String password, String email) {
+    public User(String name, String password, String email) {
         this.name = name;
         this.password = password;
         this.email = email;
@@ -55,7 +55,7 @@ public class UsersRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UsersRepository that = (UsersRepository) o;
+        User that = (User) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

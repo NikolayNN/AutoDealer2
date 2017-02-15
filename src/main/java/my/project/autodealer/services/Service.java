@@ -8,35 +8,35 @@ import java.util.List;
  */
 public interface Service {
 
-    void addNewUser(UsersRepository user);
+    void addNewUser(User user);
 
-    UsersRepository loadUser(String name);
+    User loadUser(String name);
 
     boolean isExistUser(String name, String password);
 
     List<String> getAutoMakers();
 
-    RefMakerRepository loadMaker(String maker);
+    Maker loadMaker(String maker);
 
     List<String> getAutoModels();
 
-    RefModelRepository loadModel(String model);
+    Model loadModel(String model);
 
     List<String> getCarBodies();
 
-    RefCarbodyRepository loadCarbody(String body);
+    Carbody loadCarbody(String body);
 
     List<String> getTransmissions();
 
-    RefTransmissionRepository loadTransmission(String transmission);
+    Transmission loadTransmission(String transmission);
 
     List<String> getFuelTypes();
 
-    RefFueltypeRepository loadFuelType(String fuelType);
+    FuelType loadFuelType(String fuelType);
 
     List<String> getConditions();
 
-    RefConditionRepository loadCondition(String name);
+    Condition loadCondition(String name);
 
     void saveAdvert(Advert advert);
 
@@ -46,6 +46,6 @@ public interface Service {
 
     List getAdvertsByPage(int currentPage, int advertsOnPage);
 
-    RefStatusRepository loadStatus(String status);
+    Status loadStatus(String status);
 
 }

@@ -1,6 +1,6 @@
 package my.project.autodealer.controller.servlets;
 
-import my.project.autodealer.dao.repositories.UsersRepository;
+import my.project.autodealer.dao.repositories.User;
 import my.project.autodealer.services.Service;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +17,7 @@ public class AddUserServlet extends HttpServlet {
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        UsersRepository user = new UsersRepository(userName, password, email);
+        User user = new User(userName, password, email);
         service.addNewUser(user);
     }
 }

@@ -3,16 +3,17 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class RefFueltypeRepository {
+public class Maker {
     private int id;
-    private String fuelType;
+    private String maker;
 
-    public RefFueltypeRepository(String fuelType) {
-        this.fuelType = fuelType;
+    public Maker(String maker) {
+        this.maker = maker;
     }
 
-    public RefFueltypeRepository() {
+    public Maker() {
     }
+
 
     public int getId() {
         return id;
@@ -22,12 +23,12 @@ public class RefFueltypeRepository {
         this.id = id;
     }
 
-    public String getFuelType() {
-        return fuelType;
+    public String getMaker() {
+        return maker;
     }
 
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
+    public void setMaker(String maker) {
+        this.maker = maker;
     }
 
     @Override
@@ -35,10 +36,10 @@ public class RefFueltypeRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RefFueltypeRepository that = (RefFueltypeRepository) o;
+        Maker that = (Maker) o;
 
         if (id != that.id) return false;
-        if (fuelType != null ? !fuelType.equals(that.fuelType) : that.fuelType != null) return false;
+        if (maker != null ? !maker.equals(that.maker) : that.maker != null) return false;
 
         return true;
     }
@@ -46,7 +47,7 @@ public class RefFueltypeRepository {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (fuelType != null ? fuelType.hashCode() : 0);
+        result = 31 * result + (maker != null ? maker.hashCode() : 0);
         return result;
     }
 }

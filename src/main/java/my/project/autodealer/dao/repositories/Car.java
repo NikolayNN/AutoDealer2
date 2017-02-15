@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "car")
-public class CarRepository {
+public class Car {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,33 +15,33 @@ public class CarRepository {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="owner_info_id")
-    OwnerInfoRepository ownerInfo;
+    OwnerInfo ownerInfo;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="maker_info_id")
-    MakerInfoRepository makerInfo;
+    MakerInfo makerInfo;
 
-    public CarRepository() {
+    public Car() {
     }
 
-    public CarRepository(MakerInfoRepository makerInfoRepository, OwnerInfoRepository ownerInfoRepository) {
-        this.makerInfo = makerInfoRepository;
-        this.ownerInfo = ownerInfoRepository;
+    public Car(MakerInfo makerInfo, OwnerInfo ownerInfo) {
+        this.makerInfo = makerInfo;
+        this.ownerInfo = ownerInfo;
     }
 
-    public OwnerInfoRepository getOwnerInfo() {
+    public OwnerInfo getOwnerInfo() {
         return ownerInfo;
     }
 
-    public void setOwnerInfo(OwnerInfoRepository ownerinfo) {
+    public void setOwnerInfo(OwnerInfo ownerinfo) {
         this.ownerInfo = ownerinfo;
     }
 
-    public MakerInfoRepository getMakerInfo() {
+    public MakerInfo getMakerInfo() {
         return makerInfo;
     }
 
-    public void setMakerInfo(MakerInfoRepository makerinfo) {
+    public void setMakerInfo(MakerInfo makerinfo) {
         this.makerInfo = makerinfo;
     }
 
@@ -58,7 +58,7 @@ public class CarRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CarRepository that = (CarRepository) o;
+        Car that = (Car) o;
 
         if (id != that.id) return false;
 

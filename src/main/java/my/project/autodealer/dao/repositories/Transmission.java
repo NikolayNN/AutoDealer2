@@ -3,15 +3,15 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class RefTransmissionRepository {
+public class Transmission {
     private int id;
     private String transmission;
 
-    public RefTransmissionRepository(String transmission) {
+    public Transmission(String transmission) {
         this.transmission = transmission;
     }
 
-    public RefTransmissionRepository() {
+    public Transmission() {
     }
 
     public int getId() {
@@ -35,7 +35,7 @@ public class RefTransmissionRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RefTransmissionRepository that = (RefTransmissionRepository) o;
+        Transmission that = (Transmission) o;
 
         if (id != that.id) return false;
         if (transmission != null ? !transmission.equals(that.transmission) : that.transmission != null) return false;

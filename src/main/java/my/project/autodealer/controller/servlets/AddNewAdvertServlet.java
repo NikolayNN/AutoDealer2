@@ -35,16 +35,16 @@ public class AddNewAdvertServlet extends HttpServlet {
                 new Date().getTime() / 1000);
     }
 
-    private CarRepository createCar(HttpServletRequest request) {
-        return new CarRepository(createMakerInfo(request), createOwnerInfo(request));
+    private Car createCar(HttpServletRequest request) {
+        return new Car(createMakerInfo(request), createOwnerInfo(request));
     }
 
-    private UsersRepository getSessionUser(HttpServletRequest request) {
-        return (UsersRepository) request.getSession().getAttribute("user");
+    private User getSessionUser(HttpServletRequest request) {
+        return (User) request.getSession().getAttribute("user");
     }
 
-    private MakerInfoRepository createMakerInfo(HttpServletRequest request) {
-        return new MakerInfoRepository(
+    private MakerInfo createMakerInfo(HttpServletRequest request) {
+        return new MakerInfo(
                 service.loadMaker(request.getParameter("maker")),
                 service.loadModel(request.getParameter("model")),
                 service.loadCarbody(request.getParameter("body")),
@@ -54,8 +54,8 @@ public class AddNewAdvertServlet extends HttpServlet {
                 Short.parseShort(request.getParameter("year")));
     }
 
-    private OwnerInfoRepository createOwnerInfo(HttpServletRequest request) {
-        return new OwnerInfoRepository(
+    private OwnerInfo createOwnerInfo(HttpServletRequest request) {
+        return new OwnerInfo(
                 Integer.parseInt(request.getParameter("mileage")),
                 request.getParameter("description"),
                 Integer.parseInt(request.getParameter("price")),

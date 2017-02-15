@@ -4,14 +4,14 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="my.project.autodealer.dao.repositories.RefFueltypeRepository" table="ref_fueltype" schema="public"
+    <class name="my.project.autodealer.dao.repositories.Condition" table="ref_condition" schema="public"
            catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
             <generator class="increment"/>
         </id>
-        <property name="fuelType">
-            <column name="fuel_type" sql-type="text"/>
+        <property name="condition">
+            <column name="condition" sql-type="text"/>
         </property>
     </class>
 </hibernate-mapping>

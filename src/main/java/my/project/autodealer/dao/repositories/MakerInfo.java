@@ -3,13 +3,13 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/29/2017.
  */
-public class MakerInfoRepository {
+public class MakerInfo {
     private int id;
-    private RefMakerRepository refMaker;
-    private RefModelRepository refModel;
-    private RefCarbodyRepository refCarBody;
-    private RefTransmissionRepository refTransmission;
-    private RefFueltypeRepository refFuelType;
+    private Maker refMaker;
+    private Model refModel;
+    private Carbody refCarBody;
+    private Transmission refTransmission;
+    private FuelType refFuelType;
     private short capacity;
     private short year;
 
@@ -17,10 +17,10 @@ public class MakerInfoRepository {
         return id;
     }
 
-    public MakerInfoRepository() {
+    public MakerInfo() {
     }
 
-    public MakerInfoRepository(RefMakerRepository refMaker, RefModelRepository refModel, RefCarbodyRepository refCarBody, RefTransmissionRepository refTransmission, RefFueltypeRepository refFuelType, short capacity, short year) {
+    public MakerInfo(Maker refMaker, Model refModel, Carbody refCarBody, Transmission refTransmission, FuelType refFuelType, short capacity, short year) {
         this.refMaker = refMaker;
         this.refModel = refModel;
         this.refCarBody = refCarBody;
@@ -34,43 +34,43 @@ public class MakerInfoRepository {
         this.id = id;
     }
 
-    public RefMakerRepository getRefMaker() {
+    public Maker getRefMaker() {
         return refMaker;
     }
 
-    public void setRefMaker(RefMakerRepository maker) {
+    public void setRefMaker(Maker maker) {
         this.refMaker = maker;
     }
 
-    public RefModelRepository getRefModel() {
+    public Model getRefModel() {
         return refModel;
     }
 
-    public void setRefModel(RefModelRepository model) {
+    public void setRefModel(Model model) {
         this.refModel = model;
     }
 
-    public RefCarbodyRepository getRefCarBody() {
+    public Carbody getRefCarBody() {
         return refCarBody;
     }
 
-    public void setRefCarBody(RefCarbodyRepository carBody) {
+    public void setRefCarBody(Carbody carBody) {
         this.refCarBody = carBody;
     }
 
-    public RefTransmissionRepository getRefTransmission() {
+    public Transmission getRefTransmission() {
         return refTransmission;
     }
 
-    public void setRefTransmission(RefTransmissionRepository transmission) {
+    public void setRefTransmission(Transmission transmission) {
         this.refTransmission = transmission;
     }
 
-    public RefFueltypeRepository getRefFuelType() {
+    public FuelType getRefFuelType() {
         return refFuelType;
     }
 
-    public void setRefFuelType(RefFueltypeRepository fuelType) {
+    public void setRefFuelType(FuelType fuelType) {
         this.refFuelType = fuelType;
     }
 

@@ -5,12 +5,12 @@ package my.project.autodealer.dao.repositories;
  */
 public class Advert {
     private int id;
-    private CarRepository car;
-    private UsersRepository users;
-    private RefStatusRepository status;
+    private Car car;
+    private User users;
+    private Status status;
     private long createdDate;
 
-    public Advert(CarRepository car, UsersRepository users, RefStatusRepository status, long createdDate) {
+    public Advert(Car car, User users, Status status, long createdDate) {
         this.car = car;
         this.users = users;
         this.status = status;
@@ -36,27 +36,27 @@ public class Advert {
         this.createdDate = createdDate;
     }
 
-    public CarRepository getCar() {
+    public Car getCar() {
         return car;
     }
 
-    public void setCar(CarRepository car) {
+    public void setCar(Car car) {
         this.car = car;
     }
 
-    public UsersRepository getUsers() {
+    public User getUsers() {
         return users;
     }
 
-    public void setUsers(UsersRepository users) {
+    public void setUsers(User users) {
         this.users = users;
     }
 
-    public RefStatusRepository getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(RefStatusRepository status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 

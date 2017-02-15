@@ -3,17 +3,17 @@ package my.project.autodealer.dao.repositories;
 /**
  * Created by Nikol on 1/30/2017.
  */
-public class OwnerInfoRepository {
+public class OwnerInfo {
     private int id;
     private int mileage;
     private String description;
     private double price;
-    private RefConditionRepository refCondition;
+    private Condition refCondition;
 
-    public OwnerInfoRepository() {
+    public OwnerInfo() {
     }
 
-    public OwnerInfoRepository(int mileage, String description, double price, RefConditionRepository refCondition) {
+    public OwnerInfo(int mileage, String description, double price, Condition refCondition) {
         this.mileage = mileage;
         this.description = description;
         this.price = price;
@@ -52,11 +52,11 @@ public class OwnerInfoRepository {
         this.price = price;
     }
 
-    public RefConditionRepository getRefCondition() {
+    public Condition getRefCondition() {
         return refCondition;
     }
 
-    public void setRefCondition(RefConditionRepository condition) {
+    public void setRefCondition(Condition condition) {
         this.refCondition = condition;
     }
 
@@ -65,7 +65,7 @@ public class OwnerInfoRepository {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        OwnerInfoRepository that = (OwnerInfoRepository) o;
+        OwnerInfo that = (OwnerInfo) o;
 
         if (id != that.id) return false;
         if (mileage != that.mileage) return false;

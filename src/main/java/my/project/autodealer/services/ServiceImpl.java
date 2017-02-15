@@ -18,12 +18,12 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void addNewUser(UsersRepository user) {
+    public void addNewUser(User user) {
         databaseManager.addNewUser(user);
     }
 
     @Override
-    public UsersRepository loadUser(String name) {
+    public User loadUser(String name) {
         return databaseManager.loadUser(name);
     }
 
@@ -38,14 +38,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadAutoMakers();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            RefMakerRepository refMaker = (RefMakerRepository) iter.next();
+            Maker refMaker = (Maker) iter.next();
             result.add(refMaker.getMaker());
         }
         return result;
     }
 
     @Override
-    public RefMakerRepository loadMaker(String maker) {
+    public Maker loadMaker(String maker) {
         return databaseManager.loadMaker(maker);
     }
 
@@ -55,14 +55,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadAutoModels();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            RefModelRepository refModel = (RefModelRepository) iter.next();
+            Model refModel = (Model) iter.next();
             result.add(refModel.getModel());
         }
         return result;
     }
 
     @Override
-    public RefModelRepository loadModel(String model) {
+    public Model loadModel(String model) {
         return databaseManager.loadModel(model);
     }
 
@@ -72,14 +72,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadCarBodies();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            RefCarbodyRepository refCarbody = (RefCarbodyRepository) iter.next();
+            Carbody refCarbody = (Carbody) iter.next();
             result.add(refCarbody.getCarBody());
         }
         return result;
     }
 
     @Override
-    public RefCarbodyRepository loadCarbody(String body) {
+    public Carbody loadCarbody(String body) {
         return databaseManager.loadCarbody(body);
     }
 
@@ -89,14 +89,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadTransmissions();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            RefTransmissionRepository refTransmission = (RefTransmissionRepository) iter.next();
+            Transmission refTransmission = (Transmission) iter.next();
             result.add(refTransmission.getTransmission());
         }
         return result;
     }
 
     @Override
-    public RefTransmissionRepository loadTransmission(String transmission) {
+    public Transmission loadTransmission(String transmission) {
         return databaseManager.loadTransmission(transmission);
     }
 
@@ -106,14 +106,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadFuelType();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            RefFueltypeRepository refFueltype = (RefFueltypeRepository) iter.next();
+            FuelType refFueltype = (FuelType) iter.next();
             result.add(refFueltype.getFuelType());
         }
         return result;
     }
 
     @Override
-    public RefFueltypeRepository loadFuelType(String fuelType) {
+    public FuelType loadFuelType(String fuelType) {
         return databaseManager.loadFuelType(fuelType);
     }
 
@@ -123,14 +123,14 @@ public class ServiceImpl implements Service {
         List list = databaseManager.loadConditions();
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-            RefConditionRepository condition = (RefConditionRepository) iter.next();
+            Condition condition = (Condition) iter.next();
             result.add(condition.getCondition());
         }
         return result;
     }
 
     @Override
-    public RefConditionRepository loadCondition(String name) {
+    public Condition loadCondition(String name) {
         return databaseManager.loadCondition(name);
     }
 
@@ -156,7 +156,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public RefStatusRepository loadStatus(String status) {
+    public Status loadStatus(String status) {
         return databaseManager.loadStatus(status);
     }
 

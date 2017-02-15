@@ -10,18 +10,18 @@
             <generator class="increment"/>
         </id>
         <many-to-one name="car" column="car_id"
-                     class="my.project.autodealer.dao.repositories.CarRepository" not-null="true"
-                     cascade="save-update"  lazy="false" fetch="select"/>
+                     class="my.project.autodealer.dao.repositories.Car" not-null="true"
+                     cascade="save-update" lazy="false" fetch="select"/>
         <property name="createdDate">
             <column name="created_date" sql-type="integer"/>
         </property>
 
         <many-to-one name="users" column="users_id"
-                     class="my.project.autodealer.dao.repositories.UsersRepository" not-null="true"
+                     class="my.project.autodealer.dao.repositories.User" not-null="true"
                      cascade="save-update" lazy="false" fetch="select"/>
 
         <many-to-one name="status" column="status_id"
-                     class="my.project.autodealer.dao.repositories.RefStatusRepository" not-null="true"
+                     class="my.project.autodealer.dao.repositories.Status" not-null="true"
                      cascade="save-update" lazy="false" fetch="select"/>
     </class>
 </hibernate-mapping>

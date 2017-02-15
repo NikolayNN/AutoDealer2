@@ -3,15 +3,14 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-
-    <class name="my.project.autodealer.dao.repositories.RefTransmissionRepository" table="ref_transmission" schema="public"
+    <class name="my.project.autodealer.dao.repositories.Carbody" table="ref_carbody" schema="public"
            catalog="AutoDealer">
         <id name="id">
             <column name="id" sql-type="integer"/>
             <generator class="increment"/>
         </id>
-        <property name="transmission">
-            <column name="transmission" sql-type="text"/>
+        <property name="carBody">
+            <column name="car_body" sql-type="text"/>
         </property>
     </class>
 </hibernate-mapping>
