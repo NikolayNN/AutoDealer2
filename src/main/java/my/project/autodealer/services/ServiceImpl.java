@@ -147,7 +147,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public long recieveAdvertsCount(){
-        return databaseManager.recieveAdvertsCount();
+        return databaseManager.receiveAdvertsCount();
     }
 
     @Override

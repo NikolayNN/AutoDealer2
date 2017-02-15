@@ -44,7 +44,7 @@ public interface DatabaseManager {
 
     void saveAdvert(Advert advert);
 
-    long recieveAdvertsCount();
+    long receiveAdvertsCount();
 
     List receiveAdvertsByPage(int first, int last);
 

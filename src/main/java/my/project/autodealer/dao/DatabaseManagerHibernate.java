@@ -91,7 +91,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     }
 
     @Override
-    public long recieveAdvertsCount(){
+    public long receiveAdvertsCount(){
          return (Long) getUniqueValue("select count(*) from Advert");
     }
 

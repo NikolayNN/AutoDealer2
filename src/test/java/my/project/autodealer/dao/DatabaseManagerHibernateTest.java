@@ -101,7 +101,7 @@ public class DatabaseManagerHibernateTest {
 
     @Test
     public void getAdvertsCountTest(){
-        assertEquals(0, databaseManager.recieveAdvertsCount());
+        assertEquals(0, databaseManager.receiveAdvertsCount());
     }
 
     @Test
