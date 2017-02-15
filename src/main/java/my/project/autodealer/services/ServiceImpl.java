@@ -29,11 +29,6 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public boolean isExistUser(String name, String password) {
-        return databaseManager.isExistUser(name, password);
-    }
-
-    @Override
     public List<String> getAutoMakers(){
         List<String> result = new ArrayList<>();
         List list = databaseManager.loadAutoMakers();
@@ -138,11 +133,6 @@ public class ServiceImpl implements Service {
     @Override
     public void saveAdvert(Advert advert) {
         databaseManager.saveAdvert(advert);
-    }
-
-    @Override
-    public List getAdverts() {
-        return databaseManager.loadAdverts();
     }
 
     @Override
