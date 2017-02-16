@@ -32,7 +32,7 @@
             </form>
         </div>
         <div class="content">
-            <jsp:include page="advertList.jsp"/>
+            <jsp:include page="include/advertList.jsp"/>
             <div class="nav-bar">
                 <form method="get" action="showAdverts.do" class="nav">
                     <input type="submit" value="<<"/>

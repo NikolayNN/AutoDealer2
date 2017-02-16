@@ -17,7 +17,7 @@
         </div>
         <a href="/addAdvert.do">add new advert</a>
         <div class="content">
-            <jsp:include page="../advertList.jsp"/>
+            <jsp:include page="../include/advertList.jsp"/>
             <div class="nav-bar">
                 <form method="post" action="userOffice.do" class="nav">
                     <input type="submit" value="<<"/>
