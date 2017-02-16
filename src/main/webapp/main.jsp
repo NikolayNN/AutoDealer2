@@ -32,99 +32,31 @@
             </form>
         </div>
         <div class="content">
-            <c:forEach items="${adverts}" var="advert">
-                <table>
-                    <tr>
-                        <td>
-                            Maker
-                        </td>
-                        <td>
-                            <p>${advert.car.makerInfo.refMaker.maker}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>model</td>
-                        <td>
-                            <p>${advert.car.makerInfo.refModel.model}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>car body</td>
-                        <td>
-                            <p>${advert.car.makerInfo.refCarBody.carBody}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>transmission</td>
-                        <td>
-                            <p>${advert.car.makerInfo.refTransmission.transmission}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>fuel type</td>
-                        <td>
-                            <p>${advert.car.makerInfo.refFuelType.fuelType}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>condition</td>
-                        <td>
-                            <p>${advert.car.ownerInfo.refCondition.condition}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>cubic capacity</td>
-                        <td>
-                            <p>${advert.car.makerInfo.capacity}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>year</td>
-                        <td><p>${advert.car.makerInfo.year}</p></td>
-                    </tr>
-                    <tr>
-                        <td>mileage</td>
-                        <td><p>${advert.car.ownerInfo.mileage}</p></td>
-                    </tr>
-                    <tr>
-                        <td>price</td>
-                        <td><p>${advert.car.ownerInfo.price}</p></td>
-                    </tr>
-                    <tr>
-                        <td>description</td>
-                        <td><p>${advert.car.ownerInfo.description}</p></td>
-                    </tr>
-                    <tr>
-                        <td>added</td>
-                        <td><p>${advert.users.name}</p></td>
-                    </tr>
-                </table>
-                <hr/>
-            </c:forEach>
-        </div>
-        <div class="nav-bar">
-            <form method="get" action="showAdverts.do" class="nav">
-                <input type="submit" value="<<"/>
-            </form>
-            <form method="get" action="showAdverts.do" class="nav">
-                <input type="hidden" name="page" value="${previousPage}"/>
-                <input type="submit" value="<"/>
-            </form>
-            <span> page: ${currentPage}</span>
-            <span> pages: ${pagesCount}</span>
-            <form method="get" action="showAdverts.do" class="nav">
-                <input type="number" name="page" size="3" min="0" max="${pagesCount}"/>
-                <input type="submit" value="go"/>
-            </form>
-            <form method="get" action="showAdverts.do" class="nav">
-                <input type="hidden" name="page" value="${nextPage}"/>
-                <input type="submit" value=">"/>
-            </form>
-            <form method="get" action="showAdverts.do" class="nav">
-                <input type="hidden" name="page" value="${pagesCount}"/>
-                <input type="submit" value=">>"/>
-            </form>
-            </form>
+            <jsp:include page="advertList.jsp"/>
+            <div class="nav-bar">
+                <form method="get" action="showAdverts.do" class="nav">
+                    <input type="submit" value="<<"/>
+                </form>
+                <form method="get" action="showAdverts.do" class="nav">
+                    <input type="hidden" name="page" value="${previousPage}"/>
+                    <input type="submit" value="<"/>
+                </form>
+                <span> page: ${currentPage}</span>
+                <span> pages: ${pagesCount}</span>
+                <form method="get" action="showAdverts.do" class="nav">
+                    <input type="number" name="page" size="3" min="0" max="${pagesCount}"/>
+                    <input type="submit" value="go"/>
+                </form>
+                <form method="get" action="showAdverts.do" class="nav">
+                    <input type="hidden" name="page" value="${nextPage}"/>
+                    <input type="submit" value=">"/>
+                </form>
+                <form method="get" action="showAdverts.do" class="nav">
+                    <input type="hidden" name="page" value="${pagesCount}"/>
+                    <input type="submit" value=">>"/>
+                </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>
