@@ -153,7 +153,12 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<Advert> getAdvertsByPageForUser(int currentPage, int advertsOnPage, User user) {
-        return databaseManager.loadAdvertsByPageForUser(currentPage, advertsOnPage, user);
+        return databaseManager.loadAdvertsByPageForUser(currentPage*advertsOnPage, advertsOnPage, user);
+    }
+
+    @Override
+    public long receiveUserAdvertsCount(User user) {
+        return databaseManager.receiveUserAdvertCount(user);
     }
 
 

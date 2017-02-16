@@ -50,5 +50,7 @@ public interface DatabaseManager {
 
     Status loadStatus(String status);
 
-    List<Advert> loadAdvertsByPageForUser(int currentPage, int advertsOnPage, User user);
+    List<Advert> loadAdvertsByPageForUser(int first, int count, User user);
+
+    long receiveUserAdvertCount(User user);
 }

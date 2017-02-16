@@ -148,6 +148,11 @@ public class DatabaseManagerHibernate implements DatabaseManager {
             return query.list();
     }
 
+    @Override
+    public long receiveUserAdvertCount(User user) {
+        return (Long) getUniqueValue(String.format("select count(*) from Advert where users_id = %d", user.getId()));
+    }
+
     private Object getUniqueValue(String hql) {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery(hql);

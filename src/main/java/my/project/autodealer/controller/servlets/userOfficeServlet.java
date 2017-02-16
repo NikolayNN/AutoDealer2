@@ -19,7 +19,7 @@ public class userOfficeServlet extends HttpServlet {
         final int ADVERTS_ON_PAGE = 2;
         Service service = (Service) request.getServletContext().getAttribute("service");
         User user = (User) request.getSession().getAttribute("user");
-        long advertsCount = service.receiveAdvertsCount();
+        long advertsCount = service.receiveUserAdvertsCount(user);
         long pagesCount = advertsCount / ADVERTS_ON_PAGE; //todo make constant
         long currentPage = setCurrentPageNumber(request, pagesCount);
         List<Advert> adverts = service.getAdvertsByPageForUser((int) currentPage, ADVERTS_ON_PAGE, user);
