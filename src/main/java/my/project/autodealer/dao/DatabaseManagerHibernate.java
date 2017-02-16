@@ -96,7 +96,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     }
 
     @Override
-    public List receiveAdvertsByPage(int first, int last){
+    public List loadAdvertsByPage(int first, int last){
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("From Advert");
         query.setFirstResult(first);
@@ -137,6 +137,15 @@ public class DatabaseManagerHibernate implements DatabaseManager {
     @Override
     public Status loadStatus(String status) {
         return (Status) getUniqueValue(String.format("from Status where status='%s'", status));
+    }
+
+    @Override
+    public List<Advert> loadAdvertsByPageForUser(int first, int amount, User user) {
+            Session session = sessionFactory.openSession();
+            Query query = session.createQuery(String.format("from Advert where users_id=%d", user.getId()));
+            query.setFirstResult(first);
+            query.setMaxResults(amount);
+            return query.list();
     }
 
     private Object getUniqueValue(String hql) {

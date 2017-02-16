@@ -106,6 +106,6 @@ public class DatabaseManagerHibernateTest {
 
     @Test
     public void getAdvertsByPage(){
-        assertEquals(0, databaseManager.receiveAdvertsByPage(0,1));
+        assertEquals(0, databaseManager.loadAdvertsByPage(0,1));
     }
 }

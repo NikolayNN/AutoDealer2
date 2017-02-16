@@ -143,12 +143,17 @@ public class ServiceImpl implements Service {
     @Override
     public List getAdvertsByPage(int currentPage, int advertsOnPage){
         int first = currentPage * advertsOnPage;
-        return databaseManager.receiveAdvertsByPage(first, advertsOnPage);
+        return databaseManager.loadAdvertsByPage(first, advertsOnPage);
     }
 
     @Override
     public Status loadStatus(String status) {
         return databaseManager.loadStatus(status);
+    }
+
+    @Override
+    public List<Advert> getAdvertsByPageForUser(int currentPage, int advertsOnPage, User user) {
+        return databaseManager.loadAdvertsByPageForUser(currentPage, advertsOnPage, user);
     }
 
 

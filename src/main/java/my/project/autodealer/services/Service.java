@@ -45,4 +45,5 @@ public interface Service {
 
     Status loadStatus(String status);
 
+    List<Advert> getAdvertsByPageForUser(int currentPage, int adverts_on_page, User user);
 }

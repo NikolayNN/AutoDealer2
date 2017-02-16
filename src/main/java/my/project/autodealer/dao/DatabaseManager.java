@@ -46,7 +46,9 @@ public interface DatabaseManager {
 
     long receiveAdvertsCount();
 
-    List receiveAdvertsByPage(int first, int last);
+    List loadAdvertsByPage(int first, int last);
 
     Status loadStatus(String status);
+
+    List<Advert> loadAdvertsByPageForUser(int currentPage, int advertsOnPage, User user);
 }

@@ -1,6 +1,7 @@
 package my.project.autodealer.controller.servlets;
 
 import my.project.autodealer.model.Advert;
+import my.project.autodealer.model.User;
 import my.project.autodealer.services.Service;
 
 import javax.servlet.ServletException;
@@ -11,27 +12,28 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Nikol on 2/12/2017.
+ * Created by Nikol on 2/15/2017.
  */
-public class ShowAdvertServlet extends HttpServlet {
+public class userOfficeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final int ADVERTS_ON_PAGE = 2;
         Service service = (Service) request.getServletContext().getAttribute("service");
+        User user = (User) request.getSession().getAttribute("user");
         long advertsCount = service.receiveAdvertsCount();
         long pagesCount = advertsCount / ADVERTS_ON_PAGE; //todo make constant
         long currentPage = setCurrentPageNumber(request, pagesCount);
-        List<Advert> adverts = (List<Advert>) service.getAdvertsByPage((int) currentPage, ADVERTS_ON_PAGE);
+        List<Advert> adverts = service.getAdvertsByPageForUser((int) currentPage, ADVERTS_ON_PAGE, user);
         request.setAttribute("nextPage", setNextPageNumber(currentPage, pagesCount));
         request.setAttribute("previousPage", setPreviousPageNumber(currentPage));
         request.setAttribute("currentPage", currentPage);
         request.setAttribute("adverts", adverts);
         request.setAttribute("advertsCount", advertsCount);
         request.setAttribute("pagesCount", pagesCount);
-        request.getRequestDispatcher("main.jsp").forward(request, response);
+        request.getRequestDispatcher("secret/userOffice.jsp").forward(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 
     private long setCurrentPageNumber(HttpServletRequest request, long pagesCount) {

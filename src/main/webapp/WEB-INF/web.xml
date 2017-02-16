@@ -55,6 +55,12 @@
         <servlet-name>ShowAdvertServlet</servlet-name>
         <url-pattern>/showAdverts.do</url-pattern>
     </servlet-mapping>
-
-
+    <servlet>
+        <servlet-name>UserOfficeServlet</servlet-name>
+        <servlet-class>my.project.autodealer.controller.servlets.userOfficeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserOfficeServlet</servlet-name>
+        <url-pattern>/userOffice.do</url-pattern>
+    </servlet-mapping>
 </web-app>
