@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <meta charset="UTF-8">
+    <link href="CSS/style.css" rel="stylesheet">
     <title>${sessionScope.user.name}</title>
 </head>
 <body>
@@ -115,8 +116,6 @@
                 </table>
                 <hr/>
             </c:forEach>
-
-
             <div class="nav-bar">
                 <form method="post" action="userOffice.do" class="nav">
                     <input type="submit" value="<<"/>
