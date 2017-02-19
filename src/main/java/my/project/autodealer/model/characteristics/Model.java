@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Nikol on 1/29/2017.
  */
 @Entity
-@Table(name="ref_condition")
+@Table(name="ref_model")
 public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

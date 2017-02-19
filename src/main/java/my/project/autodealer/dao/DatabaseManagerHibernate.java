@@ -101,6 +101,7 @@ public class DatabaseManagerHibernate implements DatabaseManager {
         Query query = session.createQuery("From Advert");
         query.setFirstResult(first);
         query.setMaxResults(last);
+        List list = query.list();
         return query.list();
     }
 

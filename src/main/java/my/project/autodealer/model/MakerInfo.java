@@ -2,17 +2,43 @@ package my.project.autodealer.model;
 
 import my.project.autodealer.model.characteristics.*;
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 1/29/2017.
  */
+@Entity
+@Table(name="makerinfo")
 public class MakerInfo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "maker_id")
     private Maker refMaker;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "model_id")
     private Model refModel;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "car_body_id")
     private CarBody refCarBody;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "transmission_id")
     private Transmission refTransmission;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "fuel_type_id")
     private FuelType refFuelType;
+
+    @Column(name = "capacity")
     private short capacity;
+
+    @Column(name = "year")
     private short year;
 
     public int getId() {

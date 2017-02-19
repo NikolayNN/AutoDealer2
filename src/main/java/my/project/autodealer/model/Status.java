@@ -1,10 +1,19 @@
 package my.project.autodealer.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 1/29/2017.
  */
+@Entity
+@Table(name="ref_status")
 public class Status {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "status")
     private String status;
 
     public Status(String status) {

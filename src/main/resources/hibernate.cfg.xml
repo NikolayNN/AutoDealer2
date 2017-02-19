@@ -15,11 +15,11 @@
         <mapping class="my.project.autodealer.model.characteristics.Condition"/>
         <mapping class="my.project.autodealer.model.characteristics.FuelType"/>
         <mapping class="my.project.autodealer.model.characteristics.Maker"/>
-        <mapping resource="mappings/Model.hbm.xml"/>
-        <mapping resource="mappings/Status.hbm.xml"/>
+        <mapping class="my.project.autodealer.model.characteristics.Model"/>
+        <mapping class="my.project.autodealer.model.Status"/>
         <mapping class="my.project.autodealer.model.characteristics.Transmission"/>
-        <mapping resource="mappings/MakerInfo.hbm.xml"/>
-        <mapping resource="mappings/OwnerInfo.hbm.xml"/>
+        <mapping class="my.project.autodealer.model.MakerInfo"/>
+        <mapping class="my.project.autodealer.model.OwnerInfo"/>
         <mapping class="my.project.autodealer.model.Car" />
         <mapping resource="mappings/Users.hbm.xml"/>
         <mapping resource="mappings/Advert.hbm.xml"/>

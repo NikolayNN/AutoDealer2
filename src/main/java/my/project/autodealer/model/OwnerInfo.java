@@ -2,14 +2,30 @@ package my.project.autodealer.model;
 
 import my.project.autodealer.model.characteristics.Condition;
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 1/30/2017.
  */
+@Entity
+@Table(name="ownerinfo")
 public class OwnerInfo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "mileage")
     private int mileage;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "price")
     private double price;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "condition_id")
     private Condition refCondition;
 
     public OwnerInfo() {
