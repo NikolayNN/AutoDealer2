@@ -5,6 +5,6 @@
 </head>
 <body>
 ${message}<br>
-<p>Error. you can goto <a href="/index.html">menu</a><p>
+<p>Error. you can goto <a href="/view/index.html.html">menu</a><p>
 </body>
 </html>

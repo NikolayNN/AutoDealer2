@@ -31,7 +31,7 @@ public class ShowAdvertServlet extends HttpServlet {
         request.setAttribute("adverts", adverts);
         request.setAttribute("advertsCount", advertsCount);
         request.setAttribute("pagesCount", pagesCount);
-        request.getRequestDispatcher("main.jsp").forward(request, response);
+        request.getRequestDispatcher("view/main.jsp").forward(request, response);
     }
 
     private long setCurrentPageNumber(HttpServletRequest request, long pagesCount) {

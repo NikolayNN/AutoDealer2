@@ -17,17 +17,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <script src="js/formValidate.js"></script>
+    <script src="../js/formValidate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link href="CSS/style.css" rel="stylesheet">
+    <link href="../CSS/style.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
 <div class="back">
     <div class="main">
-        <jsp:include page="include/header.jsp"/>
+        <jsp:include page="../view/include/header.jsp"/>
         <div class="content">
-            <jsp:include page="include/advertList.jsp"/>
+            <jsp:include page="../view/include/advertList.jsp"/>
             <div class="nav-bar">
                 <form method="get" action="showAdverts.do" class="nav">
                     <input type="submit" value="<<"/>

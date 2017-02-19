@@ -29,7 +29,7 @@ public class userOfficeServlet extends HttpServlet {
         request.setAttribute("adverts", adverts);
         request.setAttribute("advertsCount", advertsCount);
         request.setAttribute("pagesCount", pagesCount);
-        request.getRequestDispatcher("secret/userOffice.jsp").forward(request, response);
+        request.getRequestDispatcher("view/secret/userOffice.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

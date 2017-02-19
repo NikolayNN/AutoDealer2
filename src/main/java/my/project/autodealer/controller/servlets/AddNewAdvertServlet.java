@@ -23,7 +23,7 @@ public class AddNewAdvertServlet extends HttpServlet {
         } catch (Exception ex) {
             ex.printStackTrace();
             request.setAttribute("message", ex.getMessage());
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("view/error.jsp").forward(request, response);
         }
     }
 
@@ -65,6 +65,6 @@ public class AddNewAdvertServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("secret/addNewAdvert.jsp").forward(request, response);
+        request.getRequestDispatcher("view/secret/addNewAdvert.jsp").forward(request, response);
     }
 }
