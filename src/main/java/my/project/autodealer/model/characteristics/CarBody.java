@@ -1,10 +1,19 @@
 package my.project.autodealer.model.characteristics;
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 1/29/2017.
  */
+@Entity
+@Table(name="ref_carbody")
 public class CarBody {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "car_body")
     private String carBody;
 
     public CarBody(String carBody) {

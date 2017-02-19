@@ -1,12 +1,20 @@
 package my.project.autodealer.model.characteristics;
 
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 1/29/2017.
  */
-
+@Entity
+@Table(name="ref_condition")
 public class Condition {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name="condition")
     private String condition;
 
     public Condition(String condition) {

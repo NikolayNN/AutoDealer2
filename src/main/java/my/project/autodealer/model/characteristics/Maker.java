@@ -1,10 +1,19 @@
 package my.project.autodealer.model.characteristics;
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 1/29/2017.
  */
+@Entity
+@Table(name="ref_maker")
 public class Maker {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "maker")
     private String maker;
 
     public Maker(String maker) {
