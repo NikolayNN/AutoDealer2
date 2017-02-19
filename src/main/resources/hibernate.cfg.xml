@@ -21,7 +21,7 @@
         <mapping class="my.project.autodealer.model.MakerInfo"/>
         <mapping class="my.project.autodealer.model.OwnerInfo"/>
         <mapping class="my.project.autodealer.model.Car" />
-        <mapping resource="mappings/Users.hbm.xml"/>
-        <mapping resource="mappings/Advert.hbm.xml"/>
+        <mapping class="my.project.autodealer.model.User"/>
+        <mapping class="my.project.autodealer.model.Advert"/>
     </session-factory>
 </hibernate-configuration>

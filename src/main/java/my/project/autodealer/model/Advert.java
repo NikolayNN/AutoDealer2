@@ -1,13 +1,31 @@
 package my.project.autodealer.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Nikol on 2/4/2017.
  */
+@Entity
+@Table(name = "advert")
 public class Advert {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "car_id")
     private Car car;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "users_id")
     private User users;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "status_id")
     private Status status;
+
+    @Column(name = "created_date")
     private long createdDate;
 
     public Advert(Car car, User users, Status status, long createdDate) {
