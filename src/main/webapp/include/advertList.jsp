@@ -7,7 +7,7 @@
                 <span class="text">Maker</span>
             </td>
             <td>
-                <span class="text">${advert.car.makerInfo.refMaker.maker}</span>
+                <span class="text">${advert.car.makerInfo.maker.maker}</span>
             </td>
         </tr>
         <tr>
@@ -15,7 +15,7 @@
                 <span class="text">model</span>
             </td>
             <td>
-                <span class="text">${advert.car.makerInfo.refModel.model}</span>
+                <span class="text">${advert.car.makerInfo.model.model}</span>
             </td>
         </tr>
         <tr>
@@ -23,7 +23,7 @@
                 <span class="text">car body</span>
             </td>
             <td>
-                <span class="text">${advert.car.makerInfo.refCarBody.carBody}</span>
+                <span class="text">${advert.car.makerInfo.carBody.carBody}</span>
             </td>
         </tr>
         <tr>
@@ -31,7 +31,7 @@
                 <span class="text">transmission</span>
             </td>
             <td>
-                <span class="text">${advert.car.makerInfo.refTransmission.transmission}</span>
+                <span class="text">${advert.car.makerInfo.transmission.transmission}</span>
             </td>
         </tr>
         <tr>
@@ -39,7 +39,7 @@
                 <span class="text">fuel type</span>
             </td>
             <td>
-                <span class="text">${advert.car.makerInfo.refFuelType.fuelType}</span>
+                <span class="text">${advert.car.makerInfo.fuelType.fuelType}</span>
             </td>
         </tr>
         <tr>
@@ -47,7 +47,7 @@
                 <span class="text">condition</span>
             </td>
             <td>
-                <span class="text">${advert.car.ownerInfo.refCondition.condition}</span>
+                <span class="text">${advert.car.ownerInfo.condition.condition}</span>
             </td>
         </tr>
         <tr>

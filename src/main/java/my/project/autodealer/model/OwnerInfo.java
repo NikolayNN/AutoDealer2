@@ -26,16 +26,16 @@ public class OwnerInfo {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "condition_id")
-    private Condition refCondition;
+    private Condition condition;
 
     public OwnerInfo() {
     }
 
-    public OwnerInfo(int mileage, String description, double price, Condition refCondition) {
+    public OwnerInfo(int mileage, String description, double price, Condition condition) {
         this.mileage = mileage;
         this.description = description;
         this.price = price;
-        this.refCondition = refCondition;
+        this.condition = condition;
     }
 
     public int getId() {
@@ -70,12 +70,12 @@ public class OwnerInfo {
         this.price = price;
     }
 
-    public Condition getRefCondition() {
-        return refCondition;
+    public Condition getCondition() {
+        return condition;
     }
 
-    public void setRefCondition(Condition condition) {
-        this.refCondition = condition;
+    public void setCondition(Condition condition) {
+        this.condition = condition;
     }
 
     @Override

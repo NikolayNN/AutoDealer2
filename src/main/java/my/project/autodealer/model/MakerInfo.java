@@ -17,23 +17,23 @@ public class MakerInfo {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "maker_id")
-    private Maker refMaker;
+    private Maker maker;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "model_id")
-    private Model refModel;
+    private Model model;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "car_body_id")
-    private CarBody refCarBody;
+    private CarBody carBody;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "transmission_id")
-    private Transmission refTransmission;
+    private Transmission transmission;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinColumn(name = "fuel_type_id")
-    private FuelType refFuelType;
+    private FuelType fuelType;
 
     @Column(name = "capacity")
     private short capacity;
@@ -48,12 +48,12 @@ public class MakerInfo {
     public MakerInfo() {
     }
 
-    public MakerInfo(Maker refMaker, Model refModel, CarBody refCarBody, Transmission refTransmission, FuelType refFuelType, short capacity, short year) {
-        this.refMaker = refMaker;
-        this.refModel = refModel;
-        this.refCarBody = refCarBody;
-        this.refTransmission = refTransmission;
-        this.refFuelType = refFuelType;
+    public MakerInfo(Maker maker, Model model, CarBody carBody, Transmission transmission, FuelType fuelType, short capacity, short year) {
+        this.maker = maker;
+        this.model = model;
+        this.carBody = carBody;
+        this.transmission = transmission;
+        this.fuelType = fuelType;
         this.capacity = capacity;
         this.year = year;
     }
@@ -62,44 +62,44 @@ public class MakerInfo {
         this.id = id;
     }
 
-    public Maker getRefMaker() {
-        return refMaker;
+    public Maker getMaker() {
+        return maker;
     }
 
-    public void setRefMaker(Maker maker) {
-        this.refMaker = maker;
+    public void setMaker(Maker maker) {
+        this.maker = maker;
     }
 
-    public Model getRefModel() {
-        return refModel;
+    public Model getModel() {
+        return model;
     }
 
-    public void setRefModel(Model model) {
-        this.refModel = model;
+    public void setModel(Model model) {
+        this.model = model;
     }
 
-    public CarBody getRefCarBody() {
-        return refCarBody;
+    public CarBody getCarBody() {
+        return carBody;
     }
 
-    public void setRefCarBody(CarBody carBody) {
-        this.refCarBody = carBody;
+    public void setCarBody(CarBody carBody) {
+        this.carBody = carBody;
     }
 
-    public Transmission getRefTransmission() {
-        return refTransmission;
+    public Transmission getTransmission() {
+        return transmission;
     }
 
-    public void setRefTransmission(Transmission transmission) {
-        this.refTransmission = transmission;
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
     }
 
-    public FuelType getRefFuelType() {
-        return refFuelType;
+    public FuelType getFuelType() {
+        return fuelType;
     }
 
-    public void setRefFuelType(FuelType fuelType) {
-        this.refFuelType = fuelType;
+    public void setFuelType(FuelType fuelType) {
+        this.fuelType = fuelType;
     }
 
     public short getCapacity() {
