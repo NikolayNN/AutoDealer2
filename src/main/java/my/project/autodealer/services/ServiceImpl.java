@@ -3,6 +3,7 @@ package my.project.autodealer.services;
 import my.project.autodealer.dao.DatabaseManager;
 import my.project.autodealer.model.*;
 import my.project.autodealer.model.characteristics.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,12 +12,11 @@ import java.util.List;
 /**
  * Created by Nikol on 2/5/2017.
  */
+@org.springframework.stereotype.Service
 public class ServiceImpl implements Service {
-    DatabaseManager databaseManager;
 
-    public ServiceImpl(DatabaseManager databaseManager) {
-        this.databaseManager = databaseManager;
-    }
+    @Autowired
+    DatabaseManager databaseManager;
 
     @Override
     public void addNewUser(User user) {

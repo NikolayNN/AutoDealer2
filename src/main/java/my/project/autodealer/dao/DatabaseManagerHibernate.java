@@ -5,12 +5,14 @@ import my.project.autodealer.model.characteristics.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by Nikol on 2/5/2017.
  */
+@Repository
 public class DatabaseManagerHibernate implements DatabaseManager {
     private SessionFactory sessionFactory;
 
