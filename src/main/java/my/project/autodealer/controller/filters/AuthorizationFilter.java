@@ -19,7 +19,7 @@ public class AuthorizationFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
         User user = (User) request.getSession().getAttribute("user");
         if(user == null){
-            response.sendRedirect("../signIn.html");
+            response.sendRedirect("../signIn.jsp");
             return;
         }else {
             chain.doFilter(req, resp);

@@ -29,53 +29,13 @@
     <listener>
         <listener-class>my.project.autodealer.controller.listeners.ServletContextListenerImpl</listener-class>
     </listener>
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
-    <servlet>
-        <servlet-name>AddUser</servlet-name>
-        <servlet-class>my.project.autodealer.controller.servlets.AddUserServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddUser</servlet-name>
-        <url-pattern>/addUser.do</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>SignInServlet</servlet-name>
-        <servlet-class>my.project.autodealer.controller.servlets.SignInServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SignInServlet</servlet-name>
-        <url-pattern>/signIn.do</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>LogOutServlet</servlet-name>
-        <servlet-class>my.project.autodealer.controller.servlets.LogOutServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LogOutServlet</servlet-name>
-        <url-pattern>/logOut.do</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>AddNewAdvertServlet</servlet-name>
-        <servlet-class>my.project.autodealer.controller.servlets.AddNewAdvertServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddNewAdvertServlet</servlet-name>
-        <url-pattern>/addAdvert.do</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ShowAdvertServlet</servlet-name>
-        <servlet-class>my.project.autodealer.controller.servlets.ShowAdvertServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ShowAdvertServlet</servlet-name>
-        <url-pattern>/showAdverts.do</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>UserOfficeServlet</servlet-name>
-        <servlet-class>my.project.autodealer.controller.servlets.userOfficeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>UserOfficeServlet</servlet-name>
-        <url-pattern>/userOffice.do</url-pattern>
-    </servlet-mapping>
 </web-app>

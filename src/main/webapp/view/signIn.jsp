@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <td><input type="submit" value="sign in"></td>
-                <td><a href="regPage.html">sign up</a></td>
+                <td><a href="regPage.jsp">sign up</a></td>
             </tr>
         </table>
     </form>
